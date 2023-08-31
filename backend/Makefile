@@ -3,8 +3,8 @@
 
 setup:
 	# create python virtualenv & source it
-	# source venv/Scripts/activate ---GitBash
-	# source venv/bin/activate ---GNU/Linux
+	# source splog/Scripts/activate ---GitBash
+	# source splog/bin/activate ---GNU/Linux
 	python -m virtualenv splog
 
 install:
