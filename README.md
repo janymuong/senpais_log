@@ -1,2 +1,35 @@
-# senpais_log
-Anime Logs - It’s for the weebs;
+# Senpai's Log
+
+> It’s for the weebs;  
+
+## Premise
+Everyone Knows Binge-watching Anime is Amazing, Ey?  
+And `YOU` know the trouble of juggling multiple anime shows on your watch-list, never-ending recommendations from your otaku buddies, and the persistent feeling of missing out on genuinely epic anime. The Senpai's Log project aims to solve the problem of anime fans, and weebs struggling to manage their anime watch-lists or ToDos effectively. With an ever-expanding universe of anime series and countless recommendations, anime nerds often find it difficult to keep track of what they've watched and what they plan to watch next.  
+
+Basically, this app will help anime enthusiasts, from casual fans to hardcore weebs, stay organized and updated with their favorite anime titles. It will provide a centralized platform to keep track of their watch-list, discover new anime, and possibly receive real-time notifications about episode releases. 
+
+
+## Built with:  
+This is the tech stack used for the project development.
+- Front-end: [React.js]()
+- Back-end: [Python]() with Flask, and SQLAlchemy
+- Database: [PostgreSQL]()
+- Deployment: possibly [Amazon Web Services - AWS]()
+
+Our back-end ninjas wield Flask and SQLAlchemy. We will leverage the Flask framework, a simple wrapper around Werkzeug, which offers suggestions, but doesn't enforce any dependencies or project layout. Also, a Flask-SQLAlchemy setup is a good combination for defining routes for our API endpoints and extending functionality effortlessly. And we could potentially deploy our app to Amazon Web Services which offers a relatively straightforward and seamless CI/CD pipeline via AWS-CLI, Elastic Container Registry, AWS CodeBuild, CodePipeline etc.
+
+
+## API Reference:
+> **Note**  
+> In the Senpai's Log application, the web client communicates with the web server through various API routes. These routes facilitate the interaction between the user interface and the backend functionality.
+Below are sample API endpoints that will serve out responses to HTTP API requests/calls. This is a CRUD simulated behavior of the endpoints. However, there might be slight variations in the actual implementations.  
+
+- Methods [GET, POST] `/api/anime`:
+    Retrieves a list of anime titles in the user's watch-logs.
+    Adds a new anime title to the user's watch-list.
+- Methods [GET, PUT] `/api/anime/:id`:
+    Retrieves detailed information about a specific anime by its unique ID.
+    Updates the status of an anime (watched or not watched) based on the user's preference.
+- Methods [GET, POST] `/api/user`:
+    Retrieves the user's information based on their session ID.
+    Creates a new user account with provided details.
