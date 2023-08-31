@@ -10,6 +10,7 @@ from sqlalchemy import (
 )
 from flask_sqlalchemy import SQLAlchemy
 import json
+from datetime import datetime
 from dotenv import load_dotenv
 
 
@@ -98,7 +99,7 @@ class Anime(db.Model):
     title = Column(String)
     description = Column(String)
     genre = Column(String)
-    release_date = Column(DateTime)
+    release_date = Column(DateTime, default=datetime.utcnow)
     image_url = Column(String)
     watched = Column(Boolean)
 
