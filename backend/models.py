@@ -4,6 +4,7 @@ from sqlalchemy import (
     Column,
     String,
     Integer,
+    ForeignKey,
     Boolean,
     DateTime,
     create_engine
@@ -149,8 +150,8 @@ class AnimeLog(db.Model):
     __tablename__ = 'anime_logs'
 
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, foreign_key='users.id')
-    anime_id = Column(Integer, foreign_key='anime.id')
+    user_id = Column(Integer, ForeignKey('users.id'))
+    anime_id = Column(Integer, ForeignKey('anime.id'), nullable=False)
     watched = Column(Boolean)
 
     def __init__(self, id, user_id, anime_id, watched):
