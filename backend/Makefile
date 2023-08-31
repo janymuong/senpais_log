@@ -1,0 +1,23 @@
+# Makefile: Python virtual environment
+# setup && activation
+
+setup:
+	# create python virtualenv & source it
+	# source venv/Scripts/activate ---GitBash
+	# source venv/bin/activate ---GNU/Linux
+	python -m virtualenv splog
+
+install:
+	# this should be run from inside a virtualenv
+	pip install --upgrade pip &&\
+		pip install -r requirements.txt
+
+test:
+	# tets here
+
+lint:
+	# pylint: Linter for Python code view-source: https://www.pylint.org/
+	# this should be run from inside a virtualenv
+	pylint --disable=R,C,W1203,W1202 flaskr/__init__.py
+
+all: install lint test
