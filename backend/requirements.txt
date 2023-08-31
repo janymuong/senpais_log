@@ -1,0 +1,11 @@
+Flask
+Flask-Cors
+Flask-RESTful
+Flask-SQLAlchemy
+itsdangerous
+Click
+Jinja2
+MarkupSafe
+psycopg2-binary
+SQLAlchemy
+python-dotenv
