@@ -6,12 +6,15 @@ import random
 
 from models import setup_db, User, Anime, AnimeLog
 
+
 # setup stuff if needed here eg pagination etc
 ANIME_PER_PAGE = 10
 
-# pagination function for 10 ANIME a page,
-# and will be called on relevant endpoints:
+
 def paginate_logs(request, selection):
+    '''pagination function for 10 ANIME a page,
+    and will be called on relevant endpoints:
+    '''
     page = request.args.get("page", 1, type=int)
     start = (page - 1) * ANIME_PER_PAGE
     end = start + ANIME_PER_PAGE
