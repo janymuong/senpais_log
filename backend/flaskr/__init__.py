@@ -52,7 +52,7 @@ def create_app(test_config=None):
 
     # API endpoints here;
 
-    # Senpai's Log user - CRUD ops;
+    # Senpai's Log user - CRUD operations;
     @app.route('/users', methods=['GET'])
     def get_users():
         '''retrieves users of Senpai's Log from the database
