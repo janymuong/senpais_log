@@ -113,10 +113,9 @@ The `--reload` flag will detect file changes and restart the server automaticall
 3. Create an endpoint to handle `GET` requests for all available titles, anime, users.
 4. Create an endpoint to `DELETE` a anime using a anime `ID`.
 5. Create an endpoint to `POST` a new anime, titles etc which will require the descriptions and other attributes etc.
-6. Create a `GET` endpoint to get questions based on category.
-7. Create a `POST` endpoint to get anime based on a *`search term`*. It should return any anime for a match of the search term is a substring of the anime.
-8. Create a `POST` endpoint to get anime for recommendations. This endpoint should  return a random anime for a user.
-9. Create error handlers for all expected errors including 400, 404, 422, and 500.
+6. Create a `POST` endpoint to get anime based on a *`search term`*. It should return any anime for a match of the search term is a substring of the anime.
+7. Create a `POST` endpoint to get anime for recommendations. This endpoint should  return a random anime for a user.
+8. Create error handlers for all expected errors including 400, 404, 422, and 500.
 
 
 ## Documenting API Endpoints
