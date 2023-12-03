@@ -1,5 +1,5 @@
 # Senpai's Log: API Backend
-> Note  
+> **Note**  
 > This directory features the backend/`API` part of the application.  
 > This is a **fulls-tack** web app backend. Read through the backend documentation to install its dependencies.
 
