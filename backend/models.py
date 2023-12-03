@@ -65,7 +65,7 @@ class User(db.Model):
         self.password = password
 
 
-# CRUD helper functions;
+    # CRUD helper functions;
     def insert(self):
         '''INSERT SQLAlchemy session'''
         db.session.add(self)
