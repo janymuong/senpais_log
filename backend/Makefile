@@ -1,4 +1,4 @@
-# Makefile: Python virtual environment
+# Makefile: Creating Python Virtual Environment
 # setup && activation
 
 setup:
@@ -13,7 +13,7 @@ install:
 		pip install -r requirements.txt
 
 test:
-	# tets here
+	# tests go here
 
 lint:
 	# pylint: Linter for Python code view-source: https://www.pylint.org/
