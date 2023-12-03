@@ -33,3 +33,6 @@ Below are sample API endpoints that will serve out responses to HTTP API request
 - Methods [GET, POST] `/api/user`:
     Retrieves the user's information based on their session ID.
     Creates a new user account with provided details.
+
+---
+> SE - Capstone
