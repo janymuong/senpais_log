@@ -37,7 +37,6 @@ def create_app(test_config=None):
     cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
     CORS(app)
 
-
     # after_request decorator
     @app.after_request
     def after_request(response):
@@ -49,6 +48,14 @@ def create_app(test_config=None):
         )
         return response
 
+    @app.route('/api/status', methods=['GET'])
+    def api_status():
+        '''return Senpai's Log response from the API
+        '''
+        return jsonify({
+            'status': 'OK',
+            'success': True
+        })
 
     # API endpoints here;
 
@@ -64,7 +71,6 @@ def create_app(test_config=None):
             'users': formatted_users
         })
 
-
     @app.route('/users/<int:user_id>', methods=['GET'])
     def get_user(user_id):
         '''retrieves a single user of Senpai's Log from the database
@@ -78,7 +84,6 @@ def create_app(test_config=None):
             'success': True,
             'user': user.format()
         })
-
 
     @app.route('/users', methods=['POST'])
     def create_user():
@@ -98,9 +103,8 @@ def create_app(test_config=None):
                 'success': True,
                 'user': user.format()
             })
-        except:
+        except Exception as e:
             abort(405)
-
 
     @app.route('/users/<int:user_id>', methods=['PATCH'])
     def update_user(user_id):
@@ -126,7 +130,6 @@ def create_app(test_config=None):
             'updated_user': user.format()
         })
 
-
     @app.route('/users/<int:user_id>', methods=['DELETE'])
     def delete_user(user_id):
         '''get ID to pass in to DELETE func
@@ -143,37 +146,34 @@ def create_app(test_config=None):
             'deleted_user': user_id
         })
 
-
-
     # error handlers for expected app behavior
     @app.errorhandler(400)
     def bad_request(error):
-        return (jsonify({'success': False,
-                        'error': 400,
-                        'message': 'bad request'}),
-        400
+        return (jsonify({
+            'success': False,
+            'error': 400,
+            'message': 'bad request'}), 400
         )
-
 
     @app.errorhandler(404)
     def not_found(error):
         return (
-            jsonify({'success': False,
-                     'error': 404,
-                     'message': 'resource not found'}),
+            jsonify({
+                'success': False,
+                'error': 404,
+                'message': 'resource not found'}),
             404
         )
-
 
     @app.errorhandler(405)
     def not_allowed(error):
         return (
-            jsonify({'success': False,
-                     'error': 405,
-                     'message': 'method not allowed'}),
+            jsonify({
+                'success': False,
+                'error': 405,
+                'message': 'method not allowed'}),
             405
         )
-
 
     @app.errorhandler(422)
     def unprocessable(error):
@@ -184,7 +184,6 @@ def create_app(test_config=None):
             422
         )
 
-
     @app.errorhandler(500)
     def server_error(error):
         return (
@@ -193,6 +192,5 @@ def create_app(test_config=None):
                      'message': 'Internal Server error'}),
             500
         )
-
 
     return app
