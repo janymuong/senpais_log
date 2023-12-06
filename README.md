@@ -34,5 +34,82 @@ Below are sample API endpoints that will serve out responses to HTTP API request
     Retrieves the user's information based on their session ID.
     Creates a new user account with provided details.
 
+### Resource Endpoints
+1. check API status;
+```bash
+$ curl -X GET http://127.0.0.1:5000/api/status
+{
+  "status": "OK",
+  "success": true
+}
+
+$
+```
+2. create a resource;
+
+```bash
+$ curl -X POST http://127.0.0.1:5000/anime -H "Content-Type: application/json" -d '{"title":"Shingeki no Kyojin", "description":"Paradis Island, the story goes humanity has to survive againsts...", "genre":"Miliatry", "release_date":"2023-08-01", "image_url":"https://example.com/image.jpg", "watched": true}'
+```
+
+3. search for a resource; returns a match of the search term;
+```bash
+merou@HP MINGW64 ~
+$ curl -X POST http://127.0.0.1:5000/search -H "Content-Type: application/json" -d '{"search_in": "kyojin"}'
+{
+  "anime_results": [
+    {
+      "description": "Paradis Island, the story goes humanity has to survive againsts...",
+      "genre": "Miliatry",
+      "id": 2,
+      "image_url": "https://example.com/image.jpg",
+      "release_date": "Tue, 01 Aug 2023 00:00:00 GMT",
+      "title": "Shingeki no Kyojin",
+      "watched": true
+    },
+  "success": true
+}
+
+merou@HP MINGW64 ~
+```
+
+4. DELETE resource;
+```bash
+merou@HP MINGW64 ~
+$ curl -X DELETE http://127.0.0.1:5000/anime/3
+{
+  "deleted_anime": 3,
+  "success": true
+}
+
+merou@HP MINGW64 ~
+```
+
+5. GET retrive (a) resource(s):
+```bash
+$ curl -X GET http://127.0.0.1:5000/users
+{
+  "success": true,
+  "users": [
+    {
+      "email": "xkcd@gmail.com",
+      "id": 2,
+      "password": "passwotwey",
+      "username": "sp-log"
+    },
+    {
+      "email": "mu-o@gmail.com",
+      "id": 3,
+      "password": "passwotwe7",
+      "username": "SU"
+    },
+    {
+      "email": "mu-0xkcd@gmail.com",
+      "id": 1,
+      "password": "f1help,stuff=null",
+      "username": "World Wide Weeb"
+    }
+  ]
+}
+```
 ---
 > SE - Capstone

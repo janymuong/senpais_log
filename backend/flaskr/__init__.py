@@ -166,7 +166,10 @@ def create_app(test_config=None):
         '''retrieves a single anime title from the database
         based on the provided ID
         '''
-        anime = Anime.query.get(anime_id).first_or_404()
+        anime = Anime.query.get(anime_id)
+        if anime is None:
+            abort(404)
+
         return jsonify({
             'success': True,
             'anime': anime.format()
@@ -247,21 +250,21 @@ def create_app(test_config=None):
             'deleted_anime': anime_id
         })
 
-    @app.route('/anime/search', methods=['POST'])
+    @app.route('/search', methods=['POST'])
     def search_anime():
         '''search for anime titles based on keyword - a search term
         '''
         req_data = request.get_json()
-        keyword = req_data.get('keyword')
+        search_in = req_data.get('search_in')
 
-        if not keyword:
+        if not search_in:
             abort(400)
 
         # case-insensitive search using ilike
         search_out = Anime.query.filter(
-            Anime.title.ilike(f'%{keyword}%')).all()
+            Anime.title.ilike(f'%{search_in}%')).all()
 
-        # formatted results
+        # formatted match
         f_out = [anime.format() for anime in search_out]
 
         return jsonify({
