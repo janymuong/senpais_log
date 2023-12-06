@@ -57,9 +57,8 @@ class User(db.Model):
     email = Column(String(255))
     password = Column(String)
 
-    def __init__(self, id, username, email, password):
+    def __init__(self, username, email, password):
         '''constructor'''
-        self.id = id
         self.username = username
         self.email = email
         self.password = password
@@ -104,9 +103,8 @@ class Anime(db.Model):
     image_url = Column(String)
     watched = Column(Boolean)
 
-    def __init__(self, id, title, description, genre, release_date, image_url, watched):
+    def __init__(self, title, description, genre, release_date, image_url, watched):
         '''constructor'''
-        self.id = id
         self.title = title
         self.description = description
         self.genre = genre
@@ -157,9 +155,8 @@ class AnimeLog(db.Model):
     users = db.relationship('User', backref=db.backref('anime_logs', lazy=True))
     anime = db.relationship('Anime', backref=db.backref('anime_logs', lazy=True))
 
-    def __init__(self, id, user_id, anime_id, watched):
+    def __init__(self, user_id, anime_id, watched):
         '''constructor'''
-        self.id = id
         self.user_id = user_id
         self.anime_id = anime_id
         self.watched = watched
