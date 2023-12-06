@@ -11,18 +11,18 @@ from models import setup_db, User, Anime, AnimeLog
 ANIME_PER_PAGE = 10
 
 
-def paginate_logs(request, selection):
+def paginate_anime(request, selection):
     '''pagination function for 10 ANIME a page,
     and will be called on relevant endpoints:
     '''
-    page = request.args.get("page", 1, type=int)
+    page = request.args.get('page', 1, type=int)
     start = (page - 1) * ANIME_PER_PAGE
     end = start + ANIME_PER_PAGE
 
     anime = [anime_title.format() for anime_title in selection]
-    current_logs = anime[start:end]
+    current_title = anime[start:end]
 
-    return current_logs
+    return current_title
 
 
 def create_app(test_config=None):
@@ -144,6 +144,219 @@ def create_app(test_config=None):
         return jsonify({
             'success': True,
             'deleted_user': user_id
+        })
+
+    # model: Anime endpoints;
+    @app.route('/anime', methods=['GET'])
+    def get_anime():
+        '''retrieves anime titles from the database
+        '''
+        selection = Anime.query.all()
+        if selection is None:
+            abort(404)
+
+        anime_titles = paginate_anime(request, selection)
+        return jsonify({
+            'success': True,
+            'anime': anime_titles
+        })
+
+    @app.route('/anime/<int:anime_id>', methods=['GET'])
+    def get_anime_by_id(anime_id):
+        '''retrieves a single anime title from the database
+        based on the provided ID
+        '''
+        anime = Anime.query.get(anime_id).first_or_404()
+        return jsonify({
+            'success': True,
+            'anime': anime.format()
+        })
+
+    @app.route('/anime', methods=['POST'])
+    def create_anime():
+        '''CREATE - POST
+        create a new anime title and persist to the database
+        '''
+        req_data = request.get_json()
+        title = req_data.get('title')
+        description = req_data.get('description')
+        genre = req_data.get('genre')
+        release_date = req_data.get('release_date')
+        image_url = req_data.get('image_url')
+        watched = req_data.get('watched')
+
+        try:
+            anime = Anime(
+                title=title,
+                description=description,
+                genre=genre,
+                release_date=release_date,
+                image_url=image_url,
+                watched=watched
+            )
+            anime.insert()
+
+            return jsonify({
+                'success': True,
+                'anime': anime.format()
+            })
+        except Exception as e:
+            abort(405)
+
+    @app.route('/anime/<int:anime_id>', methods=['PATCH'])
+    def update_anime(anime_id):
+        '''updates an existing anime title based on ID provided
+        '''
+        anime = Anime.query.get(anime_id)
+        if not anime:
+            abort(404)
+
+        req_data = request.get_json()
+        if 'title' in req_data:
+            anime.title = req_data['title']
+        if 'description' in req_data:
+            anime.description = req_data['description']
+        if 'genre' in req_data:
+            anime.genre = req_data['genre']
+        if 'release_date' in req_data:
+            anime.release_date = req_data['release_date']
+        if 'image_url' in req_data:
+            anime.image_url = req_data['image_url']
+        if 'watched' in req_data:
+            anime.watched = req_data['watched']
+
+        anime.update()
+
+        return jsonify({
+            'success': True,
+            'updated_anime': anime.format()
+        })
+
+    @app.route('/anime/<int:anime_id>', methods=['DELETE'])
+    def delete_anime(anime_id):
+        '''delete an anime title based on ID provided
+        '''
+        anime = Anime.query.get(anime_id)
+        if not anime:
+            abort(422)
+
+        anime.delete()
+
+        return jsonify({
+            'success': True,
+            'deleted_anime': anime_id
+        })
+
+    @app.route('/anime/search', methods=['POST'])
+    def search_anime():
+        '''search for anime titles based on keyword - a search term
+        '''
+        req_data = request.get_json()
+        keyword = req_data.get('keyword')
+
+        if not keyword:
+            abort(400)
+
+        # case-insensitive search using ilike
+        search_out = Anime.query.filter(
+            Anime.title.ilike(f'%{keyword}%')).all()
+
+        # formatted results
+        f_out = [anime.format() for anime in search_out]
+
+        return jsonify({
+            'success': True,
+            'anime_results': f_out
+        })
+
+    # AnimeLog endpoints;
+
+    @app.route('/animelog', methods=['GET'])
+    def get_logs():
+        '''retrieves anime logs from the database
+        '''
+        anime_logs = AnimeLog.query.all()
+        formatted_logs = [log.format() for log in anime_logs]
+        return jsonify({
+            'success': True,
+            'anime_logs': formatted_logs
+        })
+
+    @app.route('/animelog/<int:log_id>', methods=['GET'])
+    def get_anime_log(log_id):
+        '''retrieves a single anime log from the database
+        based on the provided ID
+        '''
+        log = AnimeLog.query.get(log_id)
+        if not log:
+            abort(404)
+
+        return jsonify({
+            'success': True,
+            'anime_log': log.format()
+        })
+
+    @app.route('/animelog', methods=['POST'])
+    def create_log():
+        '''CREATE - POST
+        create a new anime log and persist to the database
+        '''
+        req_data = request.get_json()
+        user_id = req_data.get('user_id')
+        anime_id = req_data.get('anime_id')
+        watched = req_data.get('watched')
+
+        try:
+            log = AnimeLog(
+                user_id=user_id,
+                anime_id=anime_id,
+                watched=watched
+            )
+            log.insert()
+
+            return jsonify({
+                'success': True,
+                'anime_log': log.format()
+            })
+        except Exception as e:
+            abort(405)
+
+    @app.route('/animelog/<int:log_id>', methods=['PATCH'])
+    def update_log(log_id):
+        '''updates an existing anime log based on ID provided
+        '''
+        log = AnimeLog.query.get(log_id)
+        if not log:
+            abort(404)
+
+        req_data = request.get_json()
+        if 'user_id' in req_data:
+            log.user_id = req_data['user_id']
+        if 'anime_id' in req_data:
+            log.anime_id = req_data['anime_id']
+        if 'watched' in req_data:
+            log.watched = req_data['watched']
+
+        log.update()
+
+        return jsonify({
+            'success': True,
+            'updated_anime_log': log.format()
+        })
+
+    @app.route('/animelog/<int:log_id>', methods=['DELETE'])
+    def delete_log(log_id):
+        '''delete an anime log based on ID provided
+        '''
+        log = AnimeLog.query.get(log_id)
+        if not log:
+            abort(422)
+
+        log.delete()
+
+        return jsonify({
+            'success': True,
+            'deleted_anime_log': log_id
         })
 
     # error handlers for expected app behavior
