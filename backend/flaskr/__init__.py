@@ -359,7 +359,7 @@ def create_app(test_config=None):
             'deleted_anime_log': log_id
         })
 
-    @app.route('/recommed_anime/<int:user_id>', methods=['GET'])
+    @app.route('/recommend_anime/<int:user_id>', methods=['GET'])
     def get_recommendations(user_id):
         '''recommend splog application anime to watch'''
         user = User.query.get(user_id)
@@ -368,7 +368,7 @@ def create_app(test_config=None):
                 'success': False,
                 'error': 404,
                 'message': 'user not found'
-            }), 404
+            })
 
         # get anime titles the user has watched
         watch_logs = AnimeLog.query.filter_by(
