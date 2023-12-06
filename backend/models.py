@@ -154,6 +154,9 @@ class AnimeLog(db.Model):
     anime_id = Column(Integer, ForeignKey('anime.id'), nullable=False)
     watched = Column(Boolean)
 
+    users = db.relationship('User', backref=db.backref('anime_logs', lazy=True))
+    anime = db.relationship('Anime', backref=db.backref('anime_logs', lazy=True))
+
     def __init__(self, id, user_id, anime_id, watched):
         '''constructor'''
         self.id = id
