@@ -359,6 +359,34 @@ def create_app(test_config=None):
             'deleted_anime_log': log_id
         })
 
+    @app.route('/recommed_anime/<int:user_id>', methods=['GET'])
+    def get_recommendations(user_id):
+        '''recommend splog application anime to watch'''
+        user = User.query.get(user_id)
+        if not user:
+            return jsonify({
+                'success': False,
+                'error': 404,
+                'message': 'user not found'
+            }), 404
+
+        # get anime titles the user has watched
+        watch_logs = AnimeLog.query.filter_by(
+            user_id=user_id, watched=True).all()
+        watched_ids = [log.anime_id for log in watch_logs]
+
+        splog_anime = Anime.query.filter(Anime.id.notin_(watched_ids)).all()
+        random.shuffle(splog_anime)
+
+        sp_paginate = min(3, len(splog_anime))
+        senpai_anime = [anime.format() for anime in splog_anime[:sp_paginate]]
+
+        return jsonify({
+            'success': True,
+            'user_id': user_id,
+            'recommendations': senpai_anime
+        })
+
     # error handlers for expected app behavior
     @app.errorhandler(400)
     def bad_request(error):
