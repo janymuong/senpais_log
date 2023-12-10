@@ -377,7 +377,7 @@ def create_app(test_config=None):
         # get anime titles the user has watched
         watch_logs = AnimeLog.query.filter_by(
             user_id=user_id, watched=True).all()
-        
+
         splog_anime = [log.anime_id for log in watch_logs]
 
         if not splog_anime:
