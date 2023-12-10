@@ -81,10 +81,9 @@ From within the root backend directory and with activated virtual environment...
 To run the server, execute:
 
 ```bash
+# the `--reload` flag will detect file changes and restart the server automatically.
 export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 ```
-
->the `--reload` flag will detect file changes and restart the server automatically.
 
 ## Sample Implementations
 > **Note**  
