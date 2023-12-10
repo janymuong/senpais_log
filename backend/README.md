@@ -7,7 +7,7 @@
 
 ### Install Dependencies
 
-1. **Python 3.7** and **PIP**- Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+1. **Python 3.11+** and **PIP**- Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
 
 2. **Working In a Virtual Environment** - It's recommended to leverage a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virual environment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
@@ -81,28 +81,10 @@ From within the root backend directory and with activated virtual environment...
 To run the server, execute:
 
 ```bash
-set FLASK_APP=flaskr
-```
-```bash
-set FLASK_DEBUG=true
-```
-```bash
-flask run --reload
+export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 ```
 
-The analogous commands for UNIX based systems are:
-
-```bash
-export FLASK_APP=flaskr
-```
-```bash
-export FLASK_DEBUG=true
-```
-```bash
-flask run --reload
-```
-
-The `--reload` flag will detect file changes and restart the server automatically.
+>the `--reload` flag will detect file changes and restart the server automatically.
 
 ## Sample Implementations
 > **Note**  
