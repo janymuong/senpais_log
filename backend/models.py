@@ -53,9 +53,9 @@ class User(db.Model):
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True)
-    username = Column(String)
-    email = Column(String(255))
-    password = Column(String)
+    username = Column(String, nullable=False)
+    email = Column(String(255), nullable=False)
+    password = Column(String, nullable=False)
 
     def __init__(self, username, email, password):
         '''constructor'''
@@ -96,7 +96,7 @@ class Anime(db.Model):
     __tablename__ = 'anime'
 
     id = Column(Integer, primary_key=True)
-    title = Column(String)
+    title = Column(String, nullable=False)
     description = Column(String)
     genre = Column(String)
     release_date = Column(DateTime, default=datetime.utcnow)
@@ -148,7 +148,7 @@ class AnimeLog(db.Model):
     __tablename__ = 'anime_logs'
 
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('users.id'))
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     anime_id = Column(Integer, ForeignKey('anime.id'), nullable=False)
     watched = Column(Boolean)
 
