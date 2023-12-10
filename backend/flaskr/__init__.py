@@ -377,18 +377,15 @@ def create_app(test_config=None):
         # get anime titles the user has watched
         watch_logs = AnimeLog.query.filter_by(
             user_id=user_id, watched=True).all()
-        watched_ids = [log.anime_id for log in watch_logs]
+        splog_anime = [log.anime_id for log in watch_logs]
 
-        splog_anime = Anime.query.filter(Anime.id.notin_(watched_ids)).all()
         random.shuffle(splog_anime)
-
-        sp_paginate = min(3, len(splog_anime))
-        senpai_anime = [anime.format() for anime in splog_anime[:sp_paginate]]
+        recommended_anime = Anime.query.filter_by(id=splog_anime[0]).first()
 
         return jsonify({
             'success': True,
             'user_id': user_id,
-            'recommendations': senpai_anime
+            'recommendation': recommended_anime.format() if recommended_anime else None
         })
 
     # error handlers for expected app behavior
