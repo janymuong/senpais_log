@@ -377,7 +377,15 @@ def create_app(test_config=None):
         # get anime titles the user has watched
         watch_logs = AnimeLog.query.filter_by(
             user_id=user_id, watched=True).all()
+        
         splog_anime = [log.anime_id for log in watch_logs]
+
+        if not splog_anime:
+            return jsonify({
+                'success': True,
+                'user_id': user_id,
+                'recommendation': 'This user doesnt have recommendations'
+            })
 
         random.shuffle(splog_anime)
         splog_watch = Anime.query.filter_by(id=splog_anime[0]).first()
