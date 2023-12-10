@@ -380,12 +380,12 @@ def create_app(test_config=None):
         splog_anime = [log.anime_id for log in watch_logs]
 
         random.shuffle(splog_anime)
-        recommended_anime = Anime.query.filter_by(id=splog_anime[0]).first()
+        splog_watch = Anime.query.filter_by(id=splog_anime[0]).first()
 
         return jsonify({
             'success': True,
             'user_id': user_id,
-            'recommendation': recommended_anime.format() if recommended_anime else None
+            'recommendation': splog_watch.format() if splog_watch else None
         })
 
     # error handlers for expected app behavior
