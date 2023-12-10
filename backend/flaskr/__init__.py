@@ -269,7 +269,8 @@ def create_app(test_config=None):
 
         return jsonify({
             'success': True,
-            'anime_results': f_out
+            'anime_results': f_out,
+            'total_results': len(search_out)
         })
 
     # AnimeLog endpoints;
