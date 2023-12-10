@@ -152,7 +152,7 @@ def create_app(test_config=None):
         '''retrieves anime titles from the database
         '''
         selection = Anime.query.all()
-        if selection is None:
+        if not selection:
             abort(404)
 
         anime_titles = paginate_anime(request, selection)
@@ -211,7 +211,7 @@ def create_app(test_config=None):
         '''updates an existing anime title based on ID provided
         '''
         anime = Anime.query.get(anime_id)
-        if not anime:
+        if anime is None:
             abort(404)
 
         req_data = request.get_json()
@@ -430,8 +430,8 @@ def create_app(test_config=None):
     def server_error(error):
         return (
             jsonify({'success': False,
-                     'error': 405,
-                     'message': 'Internal Server error'}),
+                     'error': 500,
+                     'message': 'Internal Server Error'}),
             500
         )
 
