@@ -29,35 +29,31 @@ make install
 
 - [Flask](http://flask.pocoo.org/) is a lightweight backend microservices framework. Flask is required to handle requests and responses.
 
-- [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use to handle the lightweight `PostgreSQL` database. The API is in [flaskr/`__init__.py`](./flaskr/__init__.py) and it  references [`models.py`](./models.py).
+- [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use to handle the lightweight `PostgreSQL` database. The API is in [`flaskr/__init__.py`](./flaskr/__init__.py) and it  references [`models.py`](./models.py).
 
-- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross-origin requests from our frontend server.
+- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross-origin requests from our frontend server, which will communicate with the backend via a proxy.
 
 
 ### Set up the Database
 
-With `Postgres` running, create a `splog` database:
+With `Postgres` running, create a `senpais_log` database:
 
 ```bash
-createdb splog
+$ sudo -u <username> -i
+$ createdb senpais_log;
 ```
 
 The analogous command for Windows environment:
 ```bash
-# cmd login to postgres
-psql -U postgres
-```
-
-```bash
-create database splog;
+# gitbash/cmd login to postgres
+$ psql -U postgres
+$ create database senpais_log;
 ```
 
 
 ### Run the Server
 
-From within the root backend directory and with activated virtual environment...
-
-To run the server, execute:
+From within the root backend directory and with activated virtual environment, execute:
 
 ```bash
 # the `--reload` flag will detect file changes and restart the server automatically.
