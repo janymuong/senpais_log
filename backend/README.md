@@ -7,19 +7,19 @@
 
 ### Install Dependencies
 
-1. **Python 3.11+** and **PIP** - follow instructions to install the latest version of python for your platform in the [Python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+1. **Python 3.11+** and **PIP** - follow instructions to install the latest version of Python for your platform in the [Python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
 
-2. **Working In a Virtual Environment** - It's recommended to leverage a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virual environment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+2. **Working In a Virtual Environment** - It's recommended to leverage a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virual environment for your platform can be found in the [Python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
 
 `NOTE`: You can create the virtual environment via [`make`](https://www.gnu.org/software/make/), a GNU CLI utility.  
-Create a siloed Python environment, and activate it - this is a directive in [Makefile](./Makefile). This will use your `pip virtualenv` or `pip venv` depending which one installed.
+Create a siloed Python environment, and activate it - with a directive in [Makefile](./Makefile). This will use your `pip virtualenv` or `pip venv` depending which one installed.
 ```bash
 cd backend
 make setup
 ```
 
-3. **Install PIP Dependencies** - Once your virtual environment is setup and running, install the required dependencies in `/backend` directory:
+3. **Install PIP Dependencies** - once your virtual environment is setup and running, install the required dependencies in `/backend` directory. This will use the dependencies listed out in the [`requirements.tx`](./requirements.txt) file:
 
 ```bash
 make install
