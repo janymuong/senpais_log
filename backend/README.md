@@ -46,9 +46,11 @@ $ createdb senpais_log;
 The analogous command for Windows environment:
 ```bash
 # gitbash/cmd login to postgres
-$ psql -U postgres
+$ psql -U <username>
 $ create database senpais_log;
 ```
+
+> **Note**: default <username> is `postgres`
 
 
 ### Run the Server
