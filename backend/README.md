@@ -50,7 +50,7 @@ $ psql -U <username>
 $ create database senpais_log;
 ```
 
-> **Note**: default <username> is `postgres`
+> **Note**: default `<username>` is `postgres`
 
 
 ### Run the Server
