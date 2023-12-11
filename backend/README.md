@@ -3,48 +3,26 @@
 > This directory features the backend/`API` part of the application.  
 > This is a **fulls-tack** web app backend. Read through the backend documentation to install its dependencies.
 
-## Setting up the Backend
+## Backend SetUp
 
 ### Install Dependencies
 
-1. **Python 3.11+** and **PIP**- Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+1. **Python 3.11+** and **PIP** - follow instructions to install the latest version of python for your platform in the [Python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
 
 2. **Working In a Virtual Environment** - It's recommended to leverage a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virual environment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
-If you have pip virtualenv already installed; create a siloed python environment. Run in your backend directory:
 
-```bash
-python -m virtualenv venv
-```
-
-To activate virtual venv on ***Windows*** run:
-
-```bash
-venv\Scripts\activate
-```
-
----
-`NOTE`: You can create the virtual environment via make, a CLI utility. 
-Create the virtaul environment like below, and activate it: this is a directive in [Makefile](./Makefile) 
+`NOTE`: You can create the virtual environment via [`make`](https://www.gnu.org/software/make/), a GNU CLI utility.  
+Create a siloed Python environment, and activate it - this is a directive in [Makefile](./Makefile). This will use your `pip virtualenv` or `pip venv` depending which one installed.
 ```bash
 cd backend
 make setup
-splog\Scripts\activate
 ```
 
-The equivalent command on ***UNIX-based operating systems*** run:
+3. **Install PIP Dependencies** - Once your virtual environment is setup and running, install the required dependencies in `/backend` directory:
 
 ```bash
-source splog/bin/activate
-```
-
-
-- install the dependencies via Makefile: `make install`
-
-3. **PIP Dependencies** - Once your virtual environment is setup and running, install the required dependencies by navigating to the `/backend` directory and running:
-
-```bash
-pip install -r requirements.txt
+make install
 ```
 
 #### Key Pip Dependencies
@@ -54,6 +32,7 @@ pip install -r requirements.txt
 - [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use to handle the lightweight `PostgreSQL` database. We'll primarily work in `__init__.py`and can reference `models.py`.
 
 - [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross-origin requests from our frontend server.
+
 
 ### Set up the Database
 
@@ -101,6 +80,4 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 
 ## Documenting API Endpoints
 
-Provided detailed documentation and reference of the API endpoints including the URL, request parameters, and the response body are in the API documentation reference README markdown file in the root directory of the Senpai's Log API app.
-
-> View [Senpai's Log API Documentation and API Reference](../README.md) for sample requests and responses and endpoints behavior.
+> View [Senpai's Log API Documentation and API Reference in the root README.md](../README.md) for sample API endpoints behavior, including each URL, request parameters, and the response body.
