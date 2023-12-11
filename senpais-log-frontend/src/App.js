@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 function App() {
   const [animeTitles, setAnimeTitles] = useState([]);
@@ -42,14 +43,8 @@ function App() {
   return (
     <div className="App">
       <h1>Senpai's Log</h1>
-      <button onClick={fetchAnimeTitles}>Load Anime Titles</button>
-      <ul>
-        {animeTitles.map(anime => (
-          <li key={anime.id}>{anime.title}</li>
-        ))}
-      </ul>
 
-      <div>
+      <div className="search-container">
         <input
           type="text"
           placeholder="Search Anime"
@@ -58,6 +53,32 @@ function App() {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
+
+      {searchTerm && (
+        <div>
+          <h2>Search Results</h2>
+          <ul>
+            {animeTitles.map(anime => (
+              <div>
+                <li key={anime.id}>{anime.title}</li>
+                <li>{anime.description}</li>
+              </div>
+              
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {!searchTerm && (
+        <div>
+          <h2>Night's Watch</h2>
+          <ul>
+            {animeTitles.map(anime => (
+              <li key={anime.id}>{anime.title}</li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <div>
         <button onClick={handleRecommendation}>Get Recommendation</button>
