@@ -1,7 +1,6 @@
 # Senpai's Log - Frontend
-> **Note**
-> This directory features the frontend part of the Senpai's LOG application.  
-> It is the public facing part of the **full-stack** web app. Read through the its frontend documentation to install dependencies.  
+> **Note**  
+> This directory features the frontend part of the Senpai's LOG application. It is the public facing part of the **full-stack** web app. Read through its frontend documentation to install dependencies.  
 
 
 ## Set-Up
