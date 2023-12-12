@@ -17,7 +17,8 @@ NPM relies on the `package.json` file located in the senpais-log-frontend direct
 $ npm install
 ```
 
-## Run Frontend in Dev Mode:
+## Run:
+> IN `development mode`
 
 ```bash
 # termianl/shell
