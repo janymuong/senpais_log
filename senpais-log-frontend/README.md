@@ -1,12 +1,12 @@
 # Senpai's Log - Frontend
 > **Note**
 > This directory features the frontend part of the application.  
-> This is a **fulls-tack** web app frontend. Read through the frontend documentation to install its dependencies.
+> It is a **fulls-tack** web app frontend. Read through the frontend documentation to install its dependencies.
 
 
 ## Set-Up
 ### Install Dependencies
-> _Tip_: this frontend is designed to work with [Flask-based Backend](../backend/flaskr/__init__.py) so it does not load successfully if the backend is not working or not connected. You can **stand up the backend first**, and you can test with [```curl```](https://curl.se/) to ascertain the `API` functionality is  working correctly.
+> _Tip_: The frontend is designed to work with a [Flask-based Backend](../backend/flaskr/__init__.py) so it does not load successfully if the backend is not working or not connected. You can **stand up the backend first**, and you can test with [```curl```](https://curl.se/) to ascertain the `API` functionality is  working correctly.
 
 1. **Installing Node and NPM**:  
 This project depends on Nodejs and Node Package Manager (NPM) [`https://nodejs.com/en/download`](https://nodejs.org/en/download/) to manage software dependencies.
