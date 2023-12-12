@@ -2,7 +2,7 @@
 
 <p align="left">
   <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Tiles" height="200" width="320" style="padding-right:100px;" />
-  <span>> It’s for the weebs :)</span>
+  <span><blockquote>It’s for the weebs :)</<blockquote></span>
 </p>
 
 
