@@ -1,26 +1,21 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.App-logo {
+.app-name {
   height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 1.5rem;
   color: white;
 }
 
@@ -28,94 +23,181 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  background-color: #161616;
+  background-image: url("./img/jjk2.0.webp");
+	background-size: cover;
+  color: #fff;
+}
+
+h1 {
+  color: #ff8c00;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(241, 238, 238, 0.3);
+}
+
+.watch{
+  color: rgb(153, 0, 255);
 }
 .search-container {
-  position: absolute;
+  position: relative;
+  left: 5px;
   top: 10px;
   right: 10px;
+  border-radius: 10px;
+  background-color: blueviolet;
 }
 
-/* Header styles */
-h1 {
-  margin-bottom: 20px;
-}
-
-/* Search bar styles */
 .search-bar {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  margin-left: 10px;
   display: flex;
   align-items: center;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 14px;
 }
 
 .search-bar input {
-  margin-right: 10px;
-}
-
-/* Search results styles */
-.search-results {
-  margin-top: 20px;
-}
-
-/* Recommendation styles */
-.recommendation {
-  margin-top: 20px;
-}
-/* App.css */
-
-body {
-  background-color: #1a1a1a;
-  color: #fff;
-}
-
-/* Header styles */
-h1 {
-  color: #ff8c00; /* Jujutsu Kaisen color */
-}
-
-/* Navigation bar styles (customize as needed) */
-nav {
-  background-color: #333;
-  padding: 10px;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-}
-
-/* Search bar styles */
-.search-bar {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.search-bar input {
-  margin-right: 10px;
   padding: 5px;
+  background-color: blueviolet;
 }
 
-/* Anime title grid styles (customize as needed) */
+.search-bar button {
+  padding: 8px 12px;
+  background-color: #ff6f00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: blueviolet;
+}
+.splog-rbg{
+  background-color: rgba(59, 14, 127, 0.406);
+  border-radius: 5px;
+  border-top-right-radius: 50px;
+}
+.splog-r {
+  list-style: none;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.title {
+  list-style: none;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  /* box-shadow: 2px 2px 4px rgba(180, 174, 174, 0.3); */
+}
+
+.anime-sp{
+  box-shadow: 2px 2px 4px rgba(184, 26, 26, 0.3);
+  border-radius: 16px;
+  background: linear-gradient(35deg, #104b4b09, rgba(108, 13, 176, 0.373));
+}
+
 .anime-titles {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  transition: transform 0.3s ease;
+  gap: 10px;
   margin-top: 20px;
 }
 
-/* Recommendation styles */
+.anime-titles:hover {
+  transform: translateY(-16px);
+  transition: transform 0.3s ease;
+}
 .recommendation {
   margin-top: 20px;
+}
+
+.create-anime-container {
+  position: absolute;
+  top: 7px;
+  right: 32px;
+  margin-right: 20px;
+  margin: 20px;
+  background: linear-gradient(35deg, #2236366d, rgba(161, 93, 93, 0.373));
+  text-align: left;
+  margin: 10px auto;
+  padding: 16px;
+  border-radius: 24px;
+  border-top-right-radius: 32%;
+  border-top-left-radius: 0px;
+  width: 320px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.create-anime-container label {
+  color: #ff6f00;
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.create-anime-container input,
+.create-anime-container textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #323131;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.create-anime-container input::placeholder {
+  color: #999;
+}
+
+.create-anime-container textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.create-anime-container button {
+  padding: 10px 15px;
+  background-color: #ff6f00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.create-anime-container button:hover {
+  background-color: #db6a00;
+}
+
+#footer a {
+	text-decoration: none;
+}
+#footer a:hover {
+	opacity: 0.8;
+}
+#footer {
+  position: absolute;
+  background-color: #4e5252;
+  height: 96px;
+	border-radius: 5px;
+  bottom: 5px;
+  left: 10px;
+}
+
+#footer a img {
+    height: 24px;
+    width: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+    padding-right: 32px;
+}
+.copyright {
+	font-size: 10pt;
+	/* text-align: right; */
+	padding-bottom: 10px;
+	padding-right: 5px;
+	/* color: grey; */
 }
