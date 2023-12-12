@@ -95,10 +95,10 @@ function App() {
           </div>
           {searchTerm && (
             <div>
-              <h2>Anime Search</h2>
+              <h2>検索入力</h2>
               <ul>
                 {animeTitles.map(anime => (
-                  <div key={anime.id}>
+                  <div className="title"key={anime.id}>
                     <li>{anime.title}</li>
                     <li>{anime.description}</li>
                   </div>
