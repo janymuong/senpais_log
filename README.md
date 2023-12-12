@@ -22,7 +22,7 @@ This is the tech stack used for the project development.
 
 Our back-end ninjas wield Flask and SQLAlchemy. We will leverage the Flask framework, a simple wrapper around Werkzeug, which offers suggestions, but doesn't enforce any dependencies or project layout. Also, a Flask-SQLAlchemy setup is a good combination for defining routes for our API endpoints and extending functionality effortlessly. And we could potentially deploy our app to Amazon Web Services which offers a relatively straightforward and seamless CI/CD pipeline via AWS-CLI, Elastic Container Registry, AWS CodeBuild, CodePipeline etc.
 
-
+---
 ## API Reference:
 > **Note**  
 > In the Senpai's Log application, the web client communicates with the web server through various API routes. These routes facilitate the interaction between the user interface and the backend functionality.
