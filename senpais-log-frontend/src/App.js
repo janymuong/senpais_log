@@ -177,7 +177,7 @@ function App() {
         </form>
       </div>
       <footer className="footer" id="footer">
-        <h4>CONNECT with ME :</h4>
+        <h6>CONNECT with ME :</h6>
         <p align="left">
           <a href="https://www.linkedin.com/in/janymuong/" target="_blank" rel="noopener noreferrer"><img align="center" src={linkedinIcon} title="LinkedIn" alt="@janymuong" /></a>
           <a href="https://www.twitch.tv/janymuong/" target="_blank" rel="noopener noreferrer"><img align="center" src={twitchIcon} title="Twitch" alt="@janymuong" /></a>
