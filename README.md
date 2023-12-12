@@ -1,6 +1,10 @@
 # Senpai's Log
 
-> It’s for the weebs;  
+<p align="center">
+  <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Tiles" height="200" width="320" style="padding-right:100px;" />
+</p>
+
+> It’s for the weebs :)  
 
 ## Premise
 Everyone Knows Binge-watching Anime is Amazing, Ey?  
@@ -35,7 +39,7 @@ Below are sample API endpoints that will serve out responses to HTTP API request
     Creates a new user account with provided details.
 
 ### Resource Endpoints
-1. check API status;
+1. check `API` status;
 ```bash
 $ curl -X GET http://127.0.0.1:5000/api/status
 {
@@ -45,13 +49,13 @@ $ curl -X GET http://127.0.0.1:5000/api/status
 
 $
 ```
-2. create a resource;
+2. `POST` create a resource;
 
 ```bash
 $ curl -X POST http://127.0.0.1:5000/anime -H "Content-Type: application/json" -d '{"title":"Shingeki no Kyojin", "description":"Paradis Island, the story goes humanity has to survive againsts...", "genre":"Miliatry", "release_date":"2023-08-01", "image_url":"https://example.com/image.jpg", "watched": true}'
 ```
 
-3. search for a resource; returns a match of the search term;
+3. `POST` search for a resource; returns a match of the search term;
 ```bash
 merou@HP MINGW64 ~
 $ curl -X POST http://127.0.0.1:5000/search -H "Content-Type: application/json" -d '{"search_in": "kyojin"}'
@@ -72,7 +76,7 @@ $ curl -X POST http://127.0.0.1:5000/search -H "Content-Type: application/json" 
 merou@HP MINGW64 ~
 ```
 
-4. DELETE resource;
+4. `DELETE` a resource;
 ```bash
 merou@HP MINGW64 ~
 $ curl -X DELETE http://127.0.0.1:5000/anime/3
@@ -84,7 +88,7 @@ $ curl -X DELETE http://127.0.0.1:5000/anime/3
 merou@HP MINGW64 ~
 ```
 
-5. GET retrive (a) resource(s):
+5. `GET` retrieve (a) resource(s):
 ```bash
 $ curl -X GET http://127.0.0.1:5000/users
 {
@@ -112,4 +116,4 @@ $ curl -X GET http://127.0.0.1:5000/users
 }
 ```
 ---
-> SE - Capstone
+> SE - Capstone [MIT License](./LICENSE)
