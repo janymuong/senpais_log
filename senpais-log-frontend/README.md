@@ -18,16 +18,15 @@ $ npm install
 ```
 
 ## Run:
-> IN `development mode`
+> IN `development mode`  
+>> Open [http://localhost:3000](http://localhost:3000) to view it in-browser. The page will reload when you make changes. You may also see any lint errors in the console.
 
 ```bash
 # termianl/shell
 $ npm start
 ```
 
-> Open [http://localhost:3000](http://localhost:3000) to view it in-browser.  
-> The page will reload when you make changes. You may also see any lint errors in the console.
-
+---
 <p align="center">
   <img align="center" src="./public/public-facing.png" title="Tiles" height="320" width="640" style="padding-right:100px;" />
 </p>
