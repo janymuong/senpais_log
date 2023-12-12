@@ -6,7 +6,7 @@
 
 ## Set-Up
 ### Install Dependencies
-> _Tip_: this frontend is designed to work with [Flask-based Backend](../backend/flaskr/__init__.py) so it does not load successfully if the backend is not working or not connected. You can **stand up the backend first**, and you can test with [```curl```](https://curl.se/) to ascertain the `API` functionality is correctly working.
+> _Tip_: this frontend is designed to work with [Flask-based Backend](../backend/flaskr/__init__.py) so it does not load successfully if the backend is not working or not connected. You can **stand up the backend first**, and you can test with [```curl```](https://curl.se/) to ascertain the `API` functionality is  working correctly.
 
 1. **Installing Node and NPM**:  
 This project depends on Nodejs and Node Package Manager (NPM) [`https://nodejs.com/en/download`](https://nodejs.org/en/download/) to manage software dependencies.
@@ -20,11 +20,9 @@ $ npm install
 
 ### Running Frontend in Dev Mode
 
-The frontend app was built using `create-react-app`. In order to run the app in development mode use `npm start`. You can change the script in the `package.json` file.
-
 ```bash
-# runs the app in the development mode.  
-npm start
+# termianl/shell
+$ npm start
 ```
 
 > Open [http://localhost:3000](http://localhost:3000) to view it in-browser.  
