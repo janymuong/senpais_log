@@ -1,7 +1,7 @@
 # Senpai's Log - Frontend
 > **Note**
 > This directory features the frontend part of the application.  
-> It is a **fulls-tack** web app frontend. Read through the frontend documentation to install its dependencies.
+> It is a public facing part of the Senpai's **fulls-tack** web app. Read through the this documentation to install the dependencies.
 
 
 ## Set-Up
