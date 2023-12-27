@@ -30,3 +30,6 @@ The page will reload when you make changes. You may also see any lint errors in 
 <p align="center">
   <img align="center" src="./public/public-facing.png" height="320" width="640" style="padding-right:100px;" />
 </p>
+<p align="center">
+  <img align="center" src="./public/public-facing2.0.png" height="320" width="640" style="padding-right:100px;" />
+</p>
