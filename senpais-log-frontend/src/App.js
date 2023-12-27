@@ -143,8 +143,10 @@ function App() {
             </ul>
           </div>
         )}
+        <br></br>
 
-        <button className="recommendation-button" onClick={handleRecommendation}>Senpai's Log</button>
+        <span>You have reached thus far; get a good ANIME recommendation from your SENPAI here:</span>
+        <button className="recommendation-button" onClick={handleRecommendation}>sp_LOG Anime</button>
         {recommendation && (
           <div>
             <p>My Otaku friend, your <strong>Senpai</strong> recommends watching :) </p>
