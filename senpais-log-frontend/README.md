@@ -28,6 +28,6 @@ $ npm start
 Open [http://localhost:3000](http://localhost:3000) to view the public facing part the app in-browser.  
 The page will reload when you make changes. You may also see any lint errors in the console.
 <p align="center">
-  <img align="center" src="./public/public-facing.png" height="240" width="320" style="padding-right:100px;" />
-  <img align="center" src="./public/public-facing2.0.png" height="240" width="320" style="padding-right:100px;" />
+  <img align="center" src="./public/public-facing.png" height="270" width="360" style="padding-right:100px;" />
+  <img align="center" src="./public/public-facing2.0.png" height="270" width="360" style="padding-right:100px;" />
 </p>
