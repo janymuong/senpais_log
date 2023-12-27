@@ -7,6 +7,7 @@ import twitterIcon from './img/twitter-light.svg';
 import githubIcon from './img/github-light.svg';
 import instagramIcon from './img/instagram-light.svg';
 import discordIcon from './img/discord.svg';
+import deleteIcon from './img/delete.png';
 
 function App() {
   const [animeTitles, setAnimeTitles] = useState([]);
@@ -48,9 +49,12 @@ function App() {
   const handleRecommendation = () => {
     fetch('http://localhost:5000/recommend_anime/1')
       .then(response => response.json())
-      .then(data => setRecommendation(data.recommendation))
+      .then(data => {
+        console.log('Recommendation data:', data);
+        setRecommendation(data.recommendation);
+      })
       .catch(error => console.error('Error fetching recommendation:', error));
-  };
+  };  
 
   const handleCreateAnime = () => {
     fetch('http://localhost:5000/anime', {
@@ -76,6 +80,20 @@ function App() {
       .catch(error => console.error('Error creating anime:', error));
   };
 
+  const handleDeleteAnime = (animeId) => {
+    if (window.confirm("Are you sure you want to delete this anime?")) {
+      fetch(`http://localhost:5000/anime/${animeId}`, {
+        method: 'DELETE',
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Anime deleted:', data.deleted_anime);
+          fetchAnimeTitles();
+        })
+        .catch(error => console.error('Error deleting anime:', error));
+    }
+  };  
+
   return (
     <div className="App">
       <h1 id='app-name'>Senpai's Log</h1>
@@ -90,48 +108,55 @@ function App() {
         <button onClick={handleSearch}>検索入力</button>
       </div>
 
-      <div className='cards'>
-        <div>
-          </div>
-          {searchTerm && (
-            <div>
-              <h2>検索入力</h2>
-              <ul>
-                {animeTitles.map(anime => (
-                  <div className="title"key={anime.id}>
-                    <li>{anime.title}</li>
-                    <li>{anime.description}</li>
-                  </div>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {!searchTerm && (
-            <div>
-              <h2 className='watch'>Night's Watch</h2>
-
-              <ul className='anime-sp'>
-                {animeTitles.map(anime => (
-                  <li className="title" key={anime.id}>{anime.title}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-          <button onClick={handleRecommendation}>Senpai's Log</button>
-          {recommendation && (
-            <div>
-              <p>My Otaku friend, your <strong>Senpai</strong> recommends watching :) </p>
-              <ul className='splog-rbg'>
-                <li className="splog-r">{recommendation.title}</li>
-                <li className="splog-r">{recommendation.description}</li>
-              </ul>
-            </div>
-          )}
+      {animeTitles.map(anime => (
+        <div className="title" key={anime.id}>
+          <li>{anime.title}</li>
+          <li>{anime.description}</li>
+          <button className="delete-button" onClick={() => handleDeleteAnime(anime.id)}>
+            <img src={deleteIcon} alt="Delete" />
+          </button>
         </div>
+      ))}
 
+      <div className='cards'>
+        {searchTerm && (
+          <div>
+            <h2>検索入力</h2>
+            <ul>
+              {animeTitles.map(anime => (
+                <div className="title" key={anime.id}>
+                  <li>{anime.title}</li>
+                  <li>{anime.description}</li>
+                </div>
+              ))}
+            </ul>
+          </div>
+        )}
 
-      {/* creating a new anime */}
+        {!searchTerm && (
+          <div>
+            <h2 className='watch'>Night's Watch</h2>
+            <ul className='anime-sp'>
+              {animeTitles.map(anime => (
+                <li className="title" key={anime.id}>{anime.title}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <button className="recommendation-button" onClick={handleRecommendation}>Senpai's Log</button>
+        {recommendation && (
+          <div>
+            <p>My Otaku friend, your <strong>Senpai</strong> recommends watching :) </p>
+            <ul className='splog-rbg'>
+              <li className="splog-r">{recommendation.title}</li>
+              <li className="splog-r">{recommendation.description}</li>
+            </ul>
+          </div>
+        )}
+
+      </div>
+
       <div className="create-anime-container">
         <h2>Create Anime</h2>
         <form>
