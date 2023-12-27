@@ -8,6 +8,7 @@ import githubIcon from './img/github-light.svg';
 import instagramIcon from './img/instagram-light.svg';
 import discordIcon from './img/discord.svg';
 import deleteIcon from './img/delete.png';
+import appLogo from './img/anime-emot.svg';
 
 function App() {
   const [animeTitles, setAnimeTitles] = useState([]);
@@ -96,7 +97,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1 id='app-name'>Senpai's Log</h1>
+      <h1 id="app-name"> <img src={appLogo} alt="Anime Emoticon"/>Senpai's Log</h1>
+
 
       <div className="search-container">
         <input

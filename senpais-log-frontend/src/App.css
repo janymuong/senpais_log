@@ -17,6 +17,12 @@
   padding: 10px 20px;
 }
 
+#app-name img{
+  width: 32px;
+  height: 40px;
+  margin-right: 20px;
+}
+
 .watch {
   color: rgb(153, 0, 255);
   display: flex;
