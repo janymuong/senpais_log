@@ -113,7 +113,7 @@ function App() {
           <li>{anime.title}</li>
           <li>{anime.description}</li>
           <button className="delete-button" onClick={() => handleDeleteAnime(anime.id)}>
-            <img src={deleteIcon} alt="Delete" />
+            <img src={deleteIcon} title="Delete ANIME" alt="Delete" />
           </button>
         </div>
       ))}

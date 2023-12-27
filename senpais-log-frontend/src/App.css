@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 20px; */
+  padding: 20px;
 }
 
 #app-name {
@@ -76,6 +76,13 @@
   position: absolute;
   top: 5px;
   right: 5px;
+  padding: 5px;
+}
+
+.delete-button img {
+  height: 32px;
+  width: 32px;
+  opacity: 0.8;
 }
 
 .anime-sp {
@@ -102,6 +109,10 @@
   margin-top: 20px;
   margin-bottom: 40px;
   z-index: 1;
+  /* background-color: #3e3232; */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .create-anime-container label {
