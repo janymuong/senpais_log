@@ -204,6 +204,7 @@ def create_app(test_config=None):
                 'anime': anime.format()
             })
         except Exception as e:
+            print(f"Error creating anime: {e}")
             abort(405)
 
     @app.route('/anime/<int:anime_id>', methods=['PATCH'])
