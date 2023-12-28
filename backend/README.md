@@ -88,6 +88,7 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 8. Create error handlers for all expected errors including 400, 404, 422, and 500.
 
 
-## Documenting the API
+---
+## `appendix` - API Documentation
 
 > View the [API Documentation and Reference](../README.md) in the root README.md for sample API endpoints behavior, including each URL, request parameters, and the response body.
