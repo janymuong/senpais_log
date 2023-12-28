@@ -55,7 +55,7 @@ $ psql -U <username>
 $ create database senpais_log;
 ```
 
-> **Note**:  
+> **_TIP_**:  
 > default `<username>` is `postgres`  
 > IF **Postgres** is not running, then start it;  
 > `$ pg_ctl -D "C:\Program Files\PostgreSQL\14\data" start`
