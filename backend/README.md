@@ -38,7 +38,7 @@ make install
 - [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross-origin requests from our frontend server, which will communicate with the backend via a proxy.
 
 
-### Database
+### PostgreSQL
 
 With `Postgres` running, create a `senpais_log` database:
 
