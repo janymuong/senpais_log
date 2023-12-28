@@ -13,7 +13,7 @@ And `YOU` know the trouble of juggling multiple anime shows on your watch-list, 
 Basically, this app will help anime enthusiasts, from casual fans to hardcore weebs, stay organized and updated with their favorite anime titles. It will provide a centralized platform to keep track of their watch-list, discover new anime, and possibly receive real-time notifications about episode releases. 
 
 
-## Built with:  
+### Built With:  
 This is the tech stack used for the project development.
 - Front-end: [React.js](https://react.dev/)
 - Back-end: [Python](https://www.python.org/) with Flask, and SQLAlchemy
