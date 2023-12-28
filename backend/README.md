@@ -90,4 +90,4 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 
 ## Documenting the API
 
-> View [Senpai's Log API Documentation and API Reference in the root README.md](../README.md) for sample API endpoints behavior, including each URL, request parameters, and the response body.
+> View the [API Documentation and Reference](../README.md) in the root README.md for sample API endpoints behavior, including each URL, request parameters, and the response body.
