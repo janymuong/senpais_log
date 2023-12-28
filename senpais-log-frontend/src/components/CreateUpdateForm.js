@@ -16,7 +16,7 @@ function CreateUpdateForm({
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Validate and format release_date
+    // validate and format release_date
     const formattedValue = name === 'release_date' ? formatReleaseDate(value) : value;
 
     console.log(`Setting ${name} to:`, formattedValue);
@@ -27,16 +27,15 @@ function CreateUpdateForm({
     }));
   };
 
-  // Helper function to format release_date
+  // Helper Function to format release_date
   const formatReleaseDate = (inputDate) => {
-    // Implement your date formatting logic here, e.g., using a date library
-    // For simplicity, let's assume the input is in MM/DD/YYYY format
+    // date formatting logic 
     const parts = inputDate.split('/');
     if (parts.length === 3) {
       const [month, day, year] = parts;
       return `${year}-${month}-${day}`;
     }
-    return inputDate; // Return as is if the format is not recognized
+    return inputDate;
   };
 
   return (
