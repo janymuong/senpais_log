@@ -29,6 +29,6 @@ $ npm start
 Open [http://localhost:3000](http://localhost:3000) to view the user interface the app in-browser.  
 The page will reload when you make changes. You may also see any lint errors in the console.
 <p align="center">
-  <img align="center" src="./public/public-facing.png" height="270" width="400" style="padding-right:100px;" />
-  <img align="center" src="./public/public-facing2.0.png" height="270" width="400" style="padding-right:100px;" />
+  <img align="center" src="./public/public-facing.png" height="320" width="480" style="padding-right:100px;" />
+  <img align="center" src="./public/public-facing2.0.png" height="320" width="480" style="padding-right:100px;" />
 </p>
