@@ -186,7 +186,7 @@ function App() {
           </div>
         )}
 
-        {!searchTerm && (
+        {/* {!searchTerm && (
           <div>
             <h2 className="watch">Night's Watch</h2>
             <ul className="anime-sp">
@@ -196,6 +196,25 @@ function App() {
                 </li>
               ))}
             </ul>
+          </div>
+        )} */}
+
+        {!searchTerm && (
+          <div>
+            <h2 className="watch">Night's Watch</h2>
+            {animeTitles.some(anime => !anime.watched) ? (
+              <ul className="anime-sp">
+                {animeTitles
+                  .filter(anime => !anime.watched)
+                  .map(anime => (
+                    <li className="title" key={anime.id} onClick={() => handleSelectAnime(anime)}>
+                      {anime.title}
+                    </li>
+                  ))}
+              </ul>
+            ) : (
+              <p className="empty-message">ZZzz - Your WATCH's empty.</p>
+            )}
           </div>
         )}
         <br></br>
