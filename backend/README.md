@@ -29,7 +29,7 @@ source splog/Scripts/activate - GitBash Windows
 make install
 ```
 
-#### Key Pip Dependencies
+#### Key **PIP** Dependencies
 
 - [Flask](http://flask.pocoo.org/) is a lightweight backend microservices framework. Flask is required to handle requests and responses.
 
