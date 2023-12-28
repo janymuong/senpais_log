@@ -43,8 +43,10 @@ make install
 With `Postgres` running, create a `senpais_log` database:
 
 ```bash
+# system termianl;
 $ pg_isready 
 $ sudo -u <username> -i
+# PSQL shell;
 $ createdb senpais_log;
 ```
 
@@ -52,6 +54,7 @@ The analogous command for Windows environment:
 ```bash
 # gitbash/cmd login to postgres
 $ psql -U <username>
+# PSQL shell;
 $ create database senpais_log;
 ```
 
@@ -67,7 +70,7 @@ $ create database senpais_log;
 From within the root backend directory and with activated virtual environment, execute:
 
 ```bash
-# the `--reload` flag will detect file changes and restart the server automatically.
+# the --reload flag will detect file changes and restart the server automatically.
 export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 ```
 
