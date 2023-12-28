@@ -1,25 +1,26 @@
 # Senpai's Log: API Backend
 > **Note**  
-> This directory features the backend/`API` part of the application.  
-> This is a **fulls-tack** web app backend. Read through the backend documentation to install its dependencies.
+> This directory features the backend/`API` part of the **full-stack** web app.  
+> Read through this backend documentation to install its dependencies.
 
-## Backend SetUp
+## Set-Up:
 
 ### Install Dependencies
 
-1. **Python 3.11+** and **PIP** - follow instructions to install the latest version of Python for your platform in the [Python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+1. **`Python 3.11+`** and **`PIP`** - follow instructions to install the latest version of Python for your platform in the [Python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
 
 2. **Working In a Virtual Environment** - It's recommended to leverage a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virual environment for your platform can be found in the [Python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
 
-`NOTE`: You can create the virtual environment via [`make`](https://www.gnu.org/software/make/), a GNU CLI utility.  
-Create a siloed Python environment, and activate it - with a directive in [Makefile](./Makefile). This will use your `pip virtualenv` or `pip venv` depending which one installed.
+`NOTE`: You can create the virtual environment via [`make`](https://www.gnu.org/software/make/), a GNU CLI utility/language.  
+Create a siloed **Python** environment, and activate it - with a directive in [Makefile](./Makefile). This will use your `pip virtualenv` or `pip venv` depending on which one is installed on your local machine.
 ```bash
+# DO in a terminal/shell;
 cd backend
 make setup
 ```
 
-3. **Install PIP Dependencies** - once your virtual environment is setup and running, install the required dependencies in `/backend` directory. This will use the dependencies listed out in the [`requirements.tx`](./requirements.txt) file:
+3. **Install `PIP` Dependencies** - once your virtual environment is setup/activated and running, install the required dependencies in `/backend` directory. This will use the dependencies listed out in the [`requirements.tx`](./requirements.txt) file:
 
 ```bash
 make install
@@ -34,11 +35,12 @@ make install
 - [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross-origin requests from our frontend server, which will communicate with the backend via a proxy.
 
 
-### Set up the Database
+### Database
 
 With `Postgres` running, create a `senpais_log` database:
 
 ```bash
+$ pg_isready 
 $ sudo -u <username> -i
 $ createdb senpais_log;
 ```
@@ -50,7 +52,10 @@ $ psql -U <username>
 $ create database senpais_log;
 ```
 
-> **Note**: default `<username>` is `postgres`
+> **Note**: default `<username>` is `postgres` 
+> IF **Postgres** is not running, then start it;  
+> `$ pg_ctl -D "C:\Program Files\PostgreSQL\14\data" start`
+
 
 
 ### Run the Server
@@ -76,6 +81,6 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 8. Create error handlers for all expected errors including 400, 404, 422, and 500.
 
 
-## Documenting API Endpoints
+## Documenting the API
 
 > View [Senpai's Log API Documentation and API Reference in the root README.md](../README.md) for sample API endpoints behavior, including each URL, request parameters, and the response body.
