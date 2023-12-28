@@ -120,5 +120,5 @@ $ curl -X GET http://127.0.0.1:5000/users
 }
 ```
 ---
-[`[viw-source]`](./AUTHORS)  
+[[viw-source]](./AUTHORS)  
 [MIT License](./LICENSE)
