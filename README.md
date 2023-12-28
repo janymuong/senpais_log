@@ -18,10 +18,11 @@ This is the tech stack used for the project development.
 - Front-end: [React.js](https://react.dev/)
 - Back-end: [Python](https://www.python.org/) with Flask, and SQLAlchemy
 ```bash
-Python is a programming language that lets you work quickly and integrate systems more effectively.
+Python is a programming language that lets you work quickly
+and integrate systems more effectively.
 ```
 - Database: [PostgreSQL](https://www.postgresql.org/)
-- Deployment: possibly [Amazon Web Services - AWS](https://aws.amazon.com/what-is-cloud-computing/?gclid=Cj0KCQiA1rSsBhDHARIsANB4EJYm0qS8ZQP6ZRYweY4War6FbE67JEP8BUaZgpEACOL-fjOZDxx9qacaAtdmEALw_wcB&trk=2d3e6bee-b4a1-42e0-8600-6f2bb4fcb10c&sc_channel=ps&ef_id=Cj0KCQiA1rSsBhDHARIsANB4EJYm0qS8ZQP6ZRYweY4War6FbE67JEP8BUaZgpEACOL-fjOZDxx9qacaAtdmEALw_wcB:G:s&s_kwcid=AL!4422!3!645125273264!e!!g!!amazon%20web%20services!19574556887!145779846872)
+- Deployment: possibly [Amazon Web Services - AWS](https://aws.amazon.com/what-is-cloud-computing/)
 
 Our [back-end](./backend/README.md/#key-pip-dependencies) ninjas wield **Flask** and **SQLAlchemy**. We will leverage the Flask framework, a simple wrapper around Werkzeug, which offers suggestions, but doesn't enforce any dependencies or project layout. Also, a `Flask-SQLAlchemy` setup is a good combination for defining routes for our API endpoints and extending functionality effortlessly. And we could potentially deploy our app to Amazon Web Services which offers a relatively straightforward and seamless CI/CD pipeline via AWS-CLI, Elastic Container Registry, AWS CodeBuild, CodePipeline etc.
 
