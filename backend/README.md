@@ -1,6 +1,6 @@
-# Senpai's Log: API Backend
+# SP-LOG: `API` Backend
 > **Note**  
-> This directory features the backend/`API` part of the **full-stack** web app.  
+> This directory features the __backend/API__ part of the **full-stack** web app.  
 > Read through this backend documentation to install its dependencies.
 
 ## Set-Up:
