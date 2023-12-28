@@ -91,4 +91,4 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 ---
 ## `appendix` - API Documentation
 
-> View the [`API` docs](../README.md#api-reference) in the root README.md for sample API endpoints behavior, including each URL, request parameters, and the response body.
+> View the [`API DOCS`](../README.md#api-reference) in the root README.md for sample API endpoints behavior, including each URL, request parameters, and the response body.
