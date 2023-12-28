@@ -120,4 +120,4 @@ $ curl -X GET http://127.0.0.1:5000/users
 }
 ```
 ---
-Created By: [Jany Muong](./AUTHORS) [MIT License](./LICENSE)
+Created By: [Jany Muong](./AUTHORS) - [MIT License](./LICENSE)
