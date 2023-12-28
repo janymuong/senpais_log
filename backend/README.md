@@ -18,6 +18,9 @@ Create a siloed **Python** environment, and activate it - with a directive in [M
 # DO in a terminal/shell;
 cd backend
 make setup
+# activate virtual environment;
+source splog/bin/activate - GNU/Linux Bash
+source splog/Scripts/activate - GitBash Windows
 ```
 
 3. **Install `PIP` Dependencies** - once your virtual environment is setup/activated and running, install the required dependencies in `/backend` directory. This will use the dependencies listed out in the [`requirements.tx`](./requirements.txt) file:
@@ -52,7 +55,8 @@ $ psql -U <username>
 $ create database senpais_log;
 ```
 
-> **Note**: default `<username>` is `postgres` 
+> **Note**:  
+> default `<username>` is `postgres`  
 > IF **Postgres** is not running, then start it;  
 > `$ pg_ctl -D "C:\Program Files\PostgreSQL\14\data" start`
 
