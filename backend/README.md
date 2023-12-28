@@ -88,6 +88,7 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 8. Create error handlers for all expected errors including 400, 404, 422, and 500.
 
 <br/>
+
 ---
 ## `appendix` - API Documentation
 
