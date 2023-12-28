@@ -87,7 +87,7 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 7. Create a `POST` endpoint to get anime for recommendations. This endpoint should  return a random anime for a user.
 8. Create error handlers for all expected errors including 400, 404, 422, and 500.
 
-
+<br/>
 ---
 ## `appendix` - API Documentation
 
