@@ -2,7 +2,7 @@
 
 <p align="left">
   <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="200" width="320" style="padding-right:100px;" />
-  <span>It’s for the weebs :)</span>
+  <span><i>It’s for the weebs :)</i></span>
 </p>
 
 
@@ -15,12 +15,16 @@ Basically, this app will help anime enthusiasts, from casual fans to hardcore we
 
 ## Built with:  
 This is the tech stack used for the project development.
-- Front-end: [React.js]()
-- Back-end: [Python]() with Flask, and SQLAlchemy
-- Database: [PostgreSQL]()
-- Deployment: possibly [Amazon Web Services - AWS]()
+- Front-end: [React.js](https://react.dev/)
+- Back-end: [Python](https://www.python.org/) with Flask, and SQLAlchemy
+```bash
+Python is a programming language that lets you work quickly
+and integrate systems more effectively.
+```
+- Database: [PostgreSQL](https://www.postgresql.org/)
+- Deployment: possibly [Amazon Web Services - AWS](https://aws.amazon.com/what-is-cloud-computing/?gclid=Cj0KCQiA1rSsBhDHARIsANB4EJYm0qS8ZQP6ZRYweY4War6FbE67JEP8BUaZgpEACOL-fjOZDxx9qacaAtdmEALw_wcB&trk=2d3e6bee-b4a1-42e0-8600-6f2bb4fcb10c&sc_channel=ps&ef_id=Cj0KCQiA1rSsBhDHARIsANB4EJYm0qS8ZQP6ZRYweY4War6FbE67JEP8BUaZgpEACOL-fjOZDxx9qacaAtdmEALw_wcB:G:s&s_kwcid=AL!4422!3!645125273264!e!!g!!amazon%20web%20services!19574556887!145779846872)
 
-Our back-end ninjas wield Flask and SQLAlchemy. We will leverage the Flask framework, a simple wrapper around Werkzeug, which offers suggestions, but doesn't enforce any dependencies or project layout. Also, a Flask-SQLAlchemy setup is a good combination for defining routes for our API endpoints and extending functionality effortlessly. And we could potentially deploy our app to Amazon Web Services which offers a relatively straightforward and seamless CI/CD pipeline via AWS-CLI, Elastic Container Registry, AWS CodeBuild, CodePipeline etc.
+Our [back-end](./backend/README.md/#key-pip-dependencies) ninjas wield **Flask** and **SQLAlchemy**. We will leverage the Flask framework, a simple wrapper around Werkzeug, which offers suggestions, but doesn't enforce any dependencies or project layout. Also, a `Flask-SQLAlchemy` setup is a good combination for defining routes for our API endpoints and extending functionality effortlessly. And we could potentially deploy our app to Amazon Web Services which offers a relatively straightforward and seamless CI/CD pipeline via AWS-CLI, Elastic Container Registry, AWS CodeBuild, CodePipeline etc.
 
 ---
 ## API Reference:
@@ -116,4 +120,4 @@ $ curl -X GET http://127.0.0.1:5000/users
 }
 ```
 ---
-> SE - Capstone [MIT License](./LICENSE)
+Created By: [Jany Muong](./AUTHORS) [MIT License](./LICENSE)
