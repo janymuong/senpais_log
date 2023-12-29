@@ -183,8 +183,8 @@ function App() {
           key={anime.id}
           onClick={() => handleSelectAnime(anime)}
         >
-          <li>{anime.title}</li>
-          <li>{anime.description}</li>
+          <li className="anime-title">{anime.title}</li>
+          <li className="anime-description">{anime.description}</li>
           <button className="delete-button" onClick={() => handleDeleteAnime(anime.id)}>
             <img src={deleteIcon} title="Delete ANIME" alt="Delete" />
           </button>
