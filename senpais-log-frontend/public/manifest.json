@@ -1,6 +1,6 @@
 {
   "short_name": "Senpai's Log",
-  "name": "Create React App Sample",
+  "name": "Senpai's LOG",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,5 +11,6 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "author": "Jany Muong"
 }

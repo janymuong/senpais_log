@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+// import { cloneElement } from 'react-dom/client';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// import { cloneElement } from 'react-toastify/dist/react-toastify.common';
+
 import linkedinIcon from './img/linkedin-light.svg';
 import twitchIcon from './img/twitch.svg';
 import twitterIcon from './img/twitter-light.svg';
@@ -85,6 +90,7 @@ function App() {
           image_url: '',
           watched: false,
         });
+        toast.success(`Anime ${newAnime.title} was successfully created!`);
         fetchAnimeTitles();
       })
       .catch(error => console.error('Error creating anime:', error));
@@ -98,6 +104,7 @@ function App() {
         .then(response => response.json())
         .then(data => {
           console.log('Anime deleted:', data.deleted_anime);
+          toast.success(`Anime ${data.deleted_anime} deleted!`);
           fetchAnimeTitles();
         })
         .catch(error => console.error('Error deleting anime:', error));
@@ -137,6 +144,7 @@ function App() {
           image_url: '',
           watched: false,
         });
+        toast.success(`Anime ${updateAnime.title} was successfully updated!`);
         setSelectedAnime(null);
       })
       .catch(error => console.error('Error updating anime:', error));
@@ -329,6 +337,8 @@ function App() {
           </button>
         </form>
       </div>
+      {/* ToastContainer to render the notifications */}
+      <ToastContainer />
 
       <footer className="footer" id="footer">
         <h6>CONNECT with ME :</h6>
