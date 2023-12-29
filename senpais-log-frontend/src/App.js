@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-// import { cloneElement } from 'react-dom/client';
+// imports for react notifications
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { cloneElement } from 'react-toastify/dist/react-toastify.common';
 
 import linkedinIcon from './img/linkedin-light.svg';
 import twitchIcon from './img/twitch.svg';
@@ -72,6 +71,7 @@ function App() {
   };
 
   const handleCreateAnime = () => {
+    let createdAnimeTitle;
     fetch('http://localhost:5000/anime', {
       method: 'POST',
       headers: {
@@ -82,6 +82,8 @@ function App() {
       .then(response => response.json())
       .then(data => {
         console.log('New anime created:', data.anime);
+        createdAnimeTitle = data.anime.title;
+        toast.success(`Anime ${createdAnimeTitle} was successfully created!`, { autoClose: 5000 });
         setNewAnime({
           title: '',
           description: '',
@@ -90,12 +92,11 @@ function App() {
           image_url: '',
           watched: false,
         });
-        toast.success(`Anime ${newAnime.title} was successfully created!`);
         fetchAnimeTitles();
       })
       .catch(error => console.error('Error creating anime:', error));
   };
-
+  
   const handleDeleteAnime = animeId => {
     if (window.confirm('Are you sure you want to delete this anime?')) {
       fetch(`http://localhost:5000/anime/${animeId}`, {
@@ -104,13 +105,19 @@ function App() {
         .then(response => response.json())
         .then(data => {
           console.log('Anime deleted:', data.deleted_anime);
-          toast.success(`Anime ${data.deleted_anime} deleted!`);
-          fetchAnimeTitles();
+          const deletedAnimeTitle = data.deleted_anime.title;
+  
+          toast.success(`Anime ${deletedAnimeTitle} deleted!`);
+  
+          setTimeout(() => {
+            toast.dismiss();
+            fetchAnimeTitles();
+          }, 5000);
         })
         .catch(error => console.error('Error deleting anime:', error));
     }
   };
-
+  
   const handleSelectAnime = anime => {
     setSelectedAnime(anime);
     setUpdateAnime({
@@ -125,6 +132,7 @@ function App() {
 
   const handleUpdateAnime = () => {
     const { id } = selectedAnime;
+    const updatedTitle = updateAnime.title;
     fetch(`http://localhost:5000/anime/${id}`, {
       method: 'PATCH',
       headers: {
@@ -144,7 +152,7 @@ function App() {
           image_url: '',
           watched: false,
         });
-        toast.success(`Anime ${updateAnime.title} was successfully updated!`);
+        toast.success(`Anime ${updatedTitle} was successfully updated!`, { autoClose: 5000 });
         setSelectedAnime(null);
       })
       .catch(error => console.error('Error updating anime:', error));
@@ -170,7 +178,11 @@ function App() {
       <hr className="divider" />
 
       {animeTitles.map(anime => (
-        <div className="title" key={anime.id} onClick={() => handleSelectAnime(anime)}>
+        <div
+          className={`title ${anime.id === selectedAnime?.id ? 'selected-anime' : ''}`}
+          key={anime.id}
+          onClick={() => handleSelectAnime(anime)}
+        >
           <li>{anime.title}</li>
           <li>{anime.description}</li>
           <button className="delete-button" onClick={() => handleDeleteAnime(anime.id)}>
@@ -193,19 +205,6 @@ function App() {
             </ul>
           </div>
         )}
-
-        {/* {!searchTerm && (
-          <div>
-            <h2 className="watch">Night's Watch</h2>
-            <ul className="anime-sp">
-              {animeTitles.map(anime => (
-                <li className="title" key={anime.id} onClick={() => handleSelectAnime(anime)}>
-                  {anime.title}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )} */}
 
         {!searchTerm && (
           <div>
