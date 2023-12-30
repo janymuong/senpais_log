@@ -381,7 +381,7 @@ function App() {
           </code>
         </p>
         <div className="copyright">
-          &copy; 2023 World Wide 'WEEB' :). Unlicense. All rights reserved.
+          &copy; {new Date().getFullYear()} World Wide 'WEEB' :). Unlicense. All rights reserved.
         </div>
       </footer>
     </div>
