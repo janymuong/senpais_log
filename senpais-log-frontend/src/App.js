@@ -48,6 +48,8 @@ function App() {
     selectedAnime ? new Date(updateAnime.release_date) : null
   );  
 
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
   useEffect(() => {
     fetchAnimeTitles();
   }, []);
@@ -263,97 +265,106 @@ function App() {
         </div>
       </div>
 
-      <div className="create-anime-container">
-        <h2>{selectedAnime ? 'Update Anime' : 'Create Anime'}</h2>
-        <form>
-          <label>Title:</label>
-          <input
-            type="text"
-            value={selectedAnime ? updateAnime.title : newAnime.title}
-            onChange={e => {
-              if (selectedAnime) {
-                setUpdateAnime({ ...updateAnime, title: e.target.value });
-              } else {
-                setNewAnime({ ...newAnime, title: e.target.value });
-              }
-            }}
-          />
+      <p className="create-anime-button-container">
+        <button className="create-anime-button" onClick={() => setIsFormVisible(true)}>
+          Create or Update Anime
+        </button>
+      </p>
 
-          <label>Description:</label>
-          <textarea
-            value={selectedAnime ? updateAnime.description : newAnime.description}
-            onChange={e => {
-              if (selectedAnime) {
-                setUpdateAnime({ ...updateAnime, description: e.target.value });
-              } else {
-                setNewAnime({ ...newAnime, description: e.target.value });
-              }
-            }}
-          ></textarea>
-
-          <label>Genre:</label>
-          <input
-            type="text"
-            value={selectedAnime ? updateAnime.genre : newAnime.genre}
-            onChange={e => {
-              if (selectedAnime) {
-                setUpdateAnime({ ...updateAnime, genre: e.target.value });
-              } else {
-                setNewAnime({ ...newAnime, genre: e.target.value });
-              }
-            }}
-          />
-
-          <label>Release Date:</label>
-          <DatePicker
-            placeholderText="e.g: 12/30/2023 for MM/DD/YYYY."
-            selected={selectedDate}
-            onChange={(date) => {
-              setSelectedDate(date);
-              if (selectedAnime) {
-                setUpdateAnime({ ...updateAnime, release_date: date });
-              } else {
-                setNewAnime({ ...newAnime, release_date: date });
-              }
-            }}
-          />
-
-          <label>Image URL:</label>
-          <input
-            type="text"
-            value={selectedAnime ? updateAnime.image_url : newAnime.image_url}
-            onChange={e => {
-              if (selectedAnime) {
-                setUpdateAnime({ ...updateAnime, image_url: e.target.value });
-              } else {
-                setNewAnime({ ...newAnime, image_url: e.target.value });
-              }
-            }}
-          />
-
-          {selectedAnime && (
-            <>
-              <label>Watched:</label>
-              <select
-                value={updateAnime.watched}
-                onChange={e =>
-                  setUpdateAnime({ ...updateAnime, watched: e.target.value === 'true' })
+      {isFormVisible && (
+        <div className="create-anime-container">
+          <h2>{selectedAnime ? 'Update Anime' : 'Create Anime'}</h2>
+          <form>
+            <label>Title:</label>
+            <input
+              type="text"
+              value={selectedAnime ? updateAnime.title : newAnime.title}
+              onChange={e => {
+                if (selectedAnime) {
+                  setUpdateAnime({ ...updateAnime, title: e.target.value });
+                } else {
+                  setNewAnime({ ...newAnime, title: e.target.value });
                 }
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
-            </>
-          )}
+              }}
+            />
 
-          <button
-            type="button"
-            onClick={selectedAnime ? handleUpdateAnime : handleCreateAnime}
-          >
-            {selectedAnime ? 'UPDATE' : 'SAVE'}
-          </button>
-        </form>
-      </div>
+            <label>Description:</label>
+            <textarea
+              value={selectedAnime ? updateAnime.description : newAnime.description}
+              onChange={e => {
+                if (selectedAnime) {
+                  setUpdateAnime({ ...updateAnime, description: e.target.value });
+                } else {
+                  setNewAnime({ ...newAnime, description: e.target.value });
+                }
+              }}
+            ></textarea>
+
+            <label>Genre:</label>
+            <input
+              type="text"
+              value={selectedAnime ? updateAnime.genre : newAnime.genre}
+              onChange={e => {
+                if (selectedAnime) {
+                  setUpdateAnime({ ...updateAnime, genre: e.target.value });
+                } else {
+                  setNewAnime({ ...newAnime, genre: e.target.value });
+                }
+              }}
+            />
+
+            <label>Release Date:</label>
+            <DatePicker
+              placeholderText="e.g: 12/30/2023 for MM/DD/YYYY."
+              selected={selectedDate}
+              onChange={(date) => {
+                setSelectedDate(date);
+                if (selectedAnime) {
+                  setUpdateAnime({ ...updateAnime, release_date: date });
+                } else {
+                  setNewAnime({ ...newAnime, release_date: date });
+                }
+              }}
+            />
+
+            <label>Image URL:</label>
+            <input
+              type="text"
+              value={selectedAnime ? updateAnime.image_url : newAnime.image_url}
+              onChange={e => {
+                if (selectedAnime) {
+                  setUpdateAnime({ ...updateAnime, image_url: e.target.value });
+                } else {
+                  setNewAnime({ ...newAnime, image_url: e.target.value });
+                }
+              }}
+            />
+
+            {selectedAnime && (
+              <>
+                <label>Watched:</label>
+                <select
+                  value={updateAnime.watched}
+                  onChange={e =>
+                    setUpdateAnime({ ...updateAnime, watched: e.target.value === 'true' })
+                  }
+                >
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </>
+            )}
+
+            <button
+              type="button"
+              onClick={selectedAnime ? handleUpdateAnime : handleCreateAnime}
+            >
+              {selectedAnime ? 'UPDATE' : 'SAVE'}
+            </button>
+          </form>
+        </div>
+      )}
+  
       {/* ToastContainer to render the notifications */}
       <ToastContainer />
 

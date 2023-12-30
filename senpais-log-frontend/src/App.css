@@ -269,6 +269,29 @@
   transform: scale(1.1);
 }
 
+.create-anime-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.create-anime-button {
+  padding: 10px 15px;
+  background: linear-gradient(45deg, #ff6f00, #db6a00);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  text-align: left;
+}
+
+.create-anime-button:hover {
+  background-color: #db6a00;
+  transform: scale(1.1);
+}
+
+
 #footer {
   position: relative;
   bottom: 0;
