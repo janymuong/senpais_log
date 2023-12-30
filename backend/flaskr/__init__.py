@@ -151,7 +151,7 @@ def create_app(test_config=None):
     def get_anime():
         '''retrieves anime titles from the database
         '''
-        selection = Anime.query.all()
+        selection = Anime.query.order_by(Anime.id).all()
         if not selection:
             abort(404)
 
