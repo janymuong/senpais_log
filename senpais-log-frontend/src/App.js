@@ -286,7 +286,7 @@ function App() {
 
       <p className="create-anime-button-container">
         <button className="create-anime-button" onClick={createUpdateAnimeToggle}>
-          {isFormVisible ? ' ' : 'Create or Update Anime'}
+          {isFormVisible ? '' : 'Create or Update Anime'}
         </button>
       </p>
 
