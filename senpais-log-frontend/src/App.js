@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 // imports for react notifications
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -40,6 +43,10 @@ function App() {
     image_url: '',
     watched: false,
   });
+
+  const [selectedDate, setSelectedDate] = useState(
+    selectedAnime ? new Date(updateAnime.release_date) : null
+  );  
 
   useEffect(() => {
     fetchAnimeTitles();
@@ -296,15 +303,15 @@ function App() {
           />
 
           <label>Release Date:</label>
-          <input
-            type="text"
-            placeholder="e.g: 12/30/2023 for MM/DD/YYYY."
-            value={selectedAnime ? updateAnime.release_date : newAnime.release_date}
-            onChange={e => {
+          <DatePicker
+            placeholderText="e.g: 12/30/2023 for MM/DD/YYYY."
+            selected={selectedDate}
+            onChange={(date) => {
+              setSelectedDate(date);
               if (selectedAnime) {
-                setUpdateAnime({ ...updateAnime, release_date: e.target.value });
+                setUpdateAnime({ ...updateAnime, release_date: date });
               } else {
-                setNewAnime({ ...newAnime, release_date: e.target.value });
+                setNewAnime({ ...newAnime, release_date: date });
               }
             }}
           />
