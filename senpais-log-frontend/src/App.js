@@ -177,7 +177,7 @@ function App() {
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
         />
-        <button onClick={handleSearch}>検索入力</button>
+        <button onClick={handleSearch} disabled={!searchTerm.trim()}>検索入力</button>
       </div>
       <hr className="divider" />
 
