@@ -223,7 +223,7 @@ function App() {
         )}
 
         {!searchTerm && (
-          <div>
+          <div className="watch-section">
             <h2 className="watch">Night's Watch</h2>
             {animeTitles.some(anime => !anime.watched) ? (
               <ul className="anime-sp">
@@ -242,23 +242,25 @@ function App() {
         )}
         <br></br>
 
-        <span>
-          You have reached thus far; get a good ANIME recommendation from your SENPAI here:
-        </span>
-        <button className="recommendation-button" onClick={handleRecommendation}>
-          sp_LOG Anime
-        </button>
-        {recommendation && (
-          <div>
-            <p>
-              My Otaku friend, your <strong>Senpai</strong> recommends watching :){' '}
-            </p>
-            <ul className="splog-rbg">
-              <li className="splog-r">{recommendation.title}</li>
-              <li className="splog-r">{recommendation.description}</li>
-            </ul>
-          </div>
-        )}
+        <div className="recommendation-section">
+          <span>
+            You have reached thus far; get a good ANIME recommendation from your SENPAI here:
+          </span>
+          <button className="recommendation-button" onClick={handleRecommendation}>
+            sp_LOG Anime
+          </button>
+          {recommendation && (
+            <div>
+              <p>
+                My Otaku friend, your <strong>Senpai</strong> recommends watching :){' '}
+              </p>
+              <ul className="splog-rbg">
+                <li className="splog-r">{recommendation.title}</li>
+                <li className="splog-descp">{recommendation.description}</li>
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="create-anime-container">

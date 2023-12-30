@@ -28,7 +28,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
+  display: inline-block;
 }
 
 @keyframes jump {
@@ -152,15 +153,39 @@
 }
 
 .splog-rbg {
-  background-color: rgba(59, 14, 127, 0.406);
-  border-radius: 5px;
+  /* background-color: rgba(59, 14, 127, 0.406); */
+  background-image: url('./img/jjk2.0.webp');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  border-bottom-left-radius: 32px;
+  border-top-left-radius: 0px;
   padding: 15px;
 }
 
 .splog-r {
   list-style: none;
-  font-size: 1.2em;
+  font-size: 2.2em;
   margin-bottom: 15px;
+  color: #852373;
+}
+
+.splog-descp {
+  list-style: none;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.watch-section {
+  max-height: 300px;
+  overflow-y: auto; 
+}
+
+.recommendation-section {
+  display: inline-block;
+  vertical-align: top;
 }
 
 .create-anime-container {
@@ -168,7 +193,6 @@
   margin-bottom: 32px;
   display: block;
   z-index: 1;
-  /* background-color: #3e3232; */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
