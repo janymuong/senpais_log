@@ -15,6 +15,11 @@ import deleteIcon from './img/delete.png';
 import appLogo from './img/anime-emot.svg';
 
 function App() {
+
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   const [animeTitles, setAnimeTitles] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [recommendation, setRecommendation] = useState(null);
@@ -164,7 +169,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 id="app-name">
+      <h1 id="app-name" onClick={handleRefresh}>
         {' '}
         <img src={appLogo} alt="Anime Emoticon" />
         Senpai's Log
