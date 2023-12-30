@@ -246,7 +246,7 @@ function App() {
 
         <div className="recommendation-section">
           <span>
-            You have reached thus far; get a good ANIME recommendation from your SENPAI here:
+            <marque>You have reached thus far; get a good ANIME recommendation from your SENPAI here: </marque>
           </span>
           <button className="recommendation-button" onClick={handleRecommendation}>
             sp_LOG Anime
