@@ -99,16 +99,39 @@
 }
 
 .anime-title {
-  font-size: 1.2em; 
+  font-size: 1.2em;
   box-shadow: 2px 2px 4px rgba(189, 174, 174, 0.3);
   font-weight: bold;
-  color: #7ec3f1; 
+  color: #7ec3f1;
 }
 
-.description {
-  color: #555;
+.anime-description {
+  color: #ffffff;
 }
 
+.additional-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.genre {
+  /* background-color: #9da7be; */
+  padding: 5px 10px;
+  border-radius: 32px;
+  font-size: 0.73em;
+  color: #0b0b0b;
+  margin-bottom: 5px;
+  background: linear-gradient(45deg, #57555500, #dccfec9a); /* Light colors inspired by Attack on Titan */
+  padding: 5px;
+  border-top-right-radius: 0px;
+  margin-bottom: 5px;
+}
+
+.release-date {
+  color: #989393;
+  font-size: 0.8em;
+}
 
 @keyframes animeSelected {
   0% {
@@ -158,8 +181,8 @@
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 20px;
-  border-bottom-left-radius: 32px;
+  border-radius: 10px;
+  border-bottom-left-radius: 50px;
   border-top-left-radius: 0px;
   padding: 15px;
 }
@@ -271,26 +294,24 @@
 
 .create-anime-button-container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.create-anime-button::before {
+  margin-right: 10px; 
+  font-size: 1.2em;
 }
 
 .create-anime-button {
   padding: 10px 15px;
-  background: linear-gradient(45deg, #ff6f00, #db6a00);
+  background-color: #ff6f00;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-  text-align: left;
 }
-
-.create-anime-button:hover {
-  background-color: #db6a00;
-  transform: scale(1.1);
-}
-
 
 #footer {
   position: relative;

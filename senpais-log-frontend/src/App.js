@@ -23,6 +23,8 @@ function App() {
     window.location.reload();
   };
 
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
   const [animeTitles, setAnimeTitles] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [recommendation, setRecommendation] = useState(null);
@@ -48,7 +50,9 @@ function App() {
     selectedAnime ? new Date(updateAnime.release_date) : null
   );  
 
-  const [isFormVisible, setIsFormVisible] = useState(false);
+  const createUpdateAnimeToggle = () => {
+    setIsFormVisible((prev) => !prev);
+  };
 
   useEffect(() => {
     fetchAnimeTitles();
@@ -176,6 +180,12 @@ function App() {
       .catch(error => console.error('Error updating anime:', error));
   };
 
+  function formatReleaseDate(dateString) {
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const date = new Date(dateString);
+    return date.toLocaleDateString(undefined, options);
+  }
+
   return (
     <div className="App">
       <h1 id="app-name" onClick={handleRefresh}>
@@ -201,13 +211,22 @@ function App() {
           key={anime.id}
           onClick={() => handleSelectAnime(anime)}
         >
-          <li className="anime-title">{anime.title}</li>
-          <li className="anime-description">{anime.description}</li>
+          <div className="anime-details">
+            <div>
+              <li className="anime-title">{anime.title}</li>
+              <li className="anime-description">{anime.description}</li>
+            </div>
+            <div className="additional-details">
+              <div className="genre">{anime.genre}</div>
+              <div className="release-date">Air Date: {formatReleaseDate(anime.release_date)}</div>
+            </div>
+          </div>
           <button className="delete-button" onClick={() => handleDeleteAnime(anime.id)}>
             <img src={deleteIcon} title="Delete ANIME" alt="Delete" />
           </button>
         </div>
       ))}
+
 
       <div className="cards">
         {searchTerm && (
@@ -249,7 +268,7 @@ function App() {
             <marque>You have reached thus far; get a good ANIME recommendation from your SENPAI here: </marque>
           </span>
           <button className="recommendation-button" onClick={handleRecommendation}>
-            sp_LOG Anime
+          In Senpai's LOG
           </button>
           {recommendation && (
             <div>
@@ -266,8 +285,8 @@ function App() {
       </div>
 
       <p className="create-anime-button-container">
-        <button className="create-anime-button" onClick={() => setIsFormVisible(true)}>
-          Create or Update Anime
+        <button className="create-anime-button" onClick={createUpdateAnimeToggle}>
+          {isFormVisible ? ' ' : 'Create or Update Anime'}
         </button>
       </p>
 
