@@ -48,6 +48,10 @@ function App() {
   };
 
   const handleSearch = () => {
+    if (!searchTerm.trim()) {
+      console.log('Search term is empty.');
+      return;
+    }
     fetch('http://localhost:5000/search', {
       method: 'POST',
       headers: {
