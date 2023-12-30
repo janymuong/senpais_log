@@ -193,6 +193,7 @@ function App() {
         <img src={appLogo} alt="Anime Emoticon" />
         Senpai's Log
       </h1>
+      <p>It’s for the weebs :)</p>
 
       <div className="search-container">
         <input
