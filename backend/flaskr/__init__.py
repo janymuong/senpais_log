@@ -8,7 +8,7 @@ from models import setup_db, User, Anime, AnimeLog
 
 
 # setup stuff if needed here eg pagination etc
-ANIME_PER_PAGE = 10
+ANIME_PER_PAGE = 5
 
 
 def paginate_anime(request, selection):
