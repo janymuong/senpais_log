@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 
 import DatePicker from 'react-datepicker';
@@ -23,6 +23,9 @@ function App() {
     window.location.reload();
   };
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [animePerPage] = useState(5);
+
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   const [animeTitles, setAnimeTitles] = useState([]);
@@ -36,6 +39,7 @@ function App() {
     image_url: '',
     watched: false,
   });
+
   const [selectedAnime, setSelectedAnime] = useState(null);
   const [updateAnime, setUpdateAnime] = useState({
     title: '',
@@ -54,15 +58,25 @@ function App() {
     setIsFormVisible((prev) => !prev);
   };
 
-  useEffect(() => {
-    fetchAnimeTitles();
-  }, []);
-
-  const fetchAnimeTitles = () => {
-    fetch('http://localhost:5000/anime')
+  const fetchAnimeTitles = useCallback(() => {
+    fetch(`http://localhost:5000/anime?page=${currentPage}&per_page=${animePerPage}`)
       .then(response => response.json())
       .then(data => setAnimeTitles(data.anime))
       .catch(error => console.error('Error fetching anime titles:', error));
+  }, [currentPage, animePerPage]);
+
+  useEffect(() => {
+    fetchAnimeTitles();
+  }, [fetchAnimeTitles]);
+
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   const handleSearch = () => {
@@ -228,6 +242,15 @@ function App() {
         </div>
       ))}
 
+      <div className="pagination">
+        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+          <span role="img" aria-label="back btn">🔙page</span>
+        </button>
+        <span>{currentPage}</span>
+        <button onClick={handleNextPage}>
+          next
+        </button>
+      </div>
 
       <div className="cards">
         {searchTerm && (
@@ -385,7 +408,7 @@ function App() {
         </div>
       )}
   
-      {/* ToastContainer to render the notifications */}
+      {/* ToastContainer to render notifications */}
       <ToastContainer />
 
       <footer className="footer" id="footer">
