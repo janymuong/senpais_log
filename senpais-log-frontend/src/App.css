@@ -46,7 +46,7 @@
 }
 
 .empty-message {
-  animation: jump 32s forwards;
+  animation: jump 5s forwards;
   padding: 8px;
   color: #aa2e25; 
   font-weight: bold;
