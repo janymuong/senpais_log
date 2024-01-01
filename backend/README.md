@@ -61,8 +61,10 @@ $ create database senpais_log;
 > **_TIP_**:  
 > default `<username>` is `postgres`  
 > IF **Postgres** is not running, then start it;  
-> `$ pg_ctl -D 'C:/Program Files/PostgreSQL/16/data' start`  
-> INFO: for 'path/to/PostgreSQL/data'
+```bash
+# replace 'path/to/PostgreSQL/data'
+$ pg_ctl -D 'C:/Program Files/PostgreSQL/16/data' start
+```
 
 
 
