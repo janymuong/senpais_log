@@ -66,11 +66,11 @@ $ curl -X POST http://127.0.0.1:5000/search -H "Content-Type: application/json" 
   "anime_results": [
     {
       "description": "In Paradis Island, the story goes humanity has to survive againsts...",
-      "genre": "Miliatry",
+      "genre": "Military, Shounen",
       "id": 2,
       "image_url": "https://example.com/image.jpg",
       "release_date": "Tue, 01 Aug 2023 00:00:00 GMT",
-      "title": "Shingeki no Kyojin",
+      "title": "Attack On Titan",
       "watched": true
     },
   "success": true
