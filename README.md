@@ -1,8 +1,8 @@
 # Senpai's LOG
 
-<p align="left">
+<p align="center">
   <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="320" width="480" style="padding-right:100px;" />
-  <p><i>It’s for the weebs :)</i></p>
+  <blockquote><i>It’s for the weebs :)</i></blockquote>
 </p>
 
 
