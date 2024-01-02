@@ -89,10 +89,10 @@ $ curl -X POST http://127.0.0.1:5000/search -H "Content-Type: application/json" 
 $
 ```
 
-4. `POST` update a resource;
+4. `PATCH` update a resource;
 
 ```bash
-$ curl -X POST http://127.0.0.1:5000/anime/1 -H "Content-Type: application/json" 
+$ curl -X PATCH http://127.0.0.1:5000/anime/1 -H "Content-Type: application/json" 
 -d '{
       "title":"Shingeki no Kyojin",
       "description":"In Paradis Island, the story goes humanity has to survive againsts...",
