@@ -136,14 +136,8 @@ function App() {
         .then(response => response.json())
         .then(data => {
           console.log('Anime deleted:', data.deleted_anime);
-          const deletedAnimeTitle = data.deleted_anime.title;
-  
-          toast.success(`Anime ${deletedAnimeTitle} deleted!`);
-  
-          setTimeout(() => {
-            toast.dismiss();
-            fetchAnimeTitles();
-          }, 5000);
+          toast.success(`Anime deleted!`, { autoClose: 5000 });
+          fetchAnimeTitles();
         })
         .catch(error => console.error('Error deleting anime:', error));
     }
