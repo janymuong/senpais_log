@@ -20,7 +20,7 @@ cd backend
 make setup
 # activate virtual environment;
 source splog/bin/activate # GNU/Linux Bash
-source splog/Scripts/activate #GitBash Windows
+source splog/Scripts/activate # GitBash Windows
 ```
 
 3. **Install `PIP` Dependencies** - once your virtual environment is setup/activated and running, install the required dependencies in `/backend` directory. This will use the dependencies listed out in the [`requirements.tx`](./requirements.txt) file:
@@ -80,7 +80,7 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 
 ## Sample Implementations
 > **Note**  
-> For each endpoint, response data is expected from it, and to be returned in `JSON`. This data is consumed by the REACT frontend via `CORS` based proxy.
+> For each `API` endpoint, response data is expected from it, and to be returned in `JSON`. This data is consumed by the REACT frontend via `CORS` based proxy.
 
 1. Use Flask-CORS to enable cross-domain requests and set response headers.
 2. Create an endpoint to handle `GET` requests for anime titles, including pagination (every 10 titles). This endpoint should return a list of titles, number of total titles.
