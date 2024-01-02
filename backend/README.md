@@ -1,7 +1,7 @@
 # SP-LOG: `API` Backend
 > **Note**  
 > This directory features the __backend/API__ part of the __full-stack__ web app.  
-> Read through this backend documentation to install its dependencies.
+> Read through this documentation to install dependencies.
 
 ## Set-Up:
 
