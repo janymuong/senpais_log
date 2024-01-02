@@ -1,18 +1,18 @@
 # SP-LOG: `API` Backend
 > **Note**  
-> This directory features the __backend/API__ part of the **full-stack** web app.  
+> This directory features the __backend/API__ part of the __full-stack__ web app.  
 > Read through this backend documentation to install its dependencies.
 
 ## Set-Up:
 
 ### Install Dependencies
 
-1. **`Python 3.11+`** and **`PIP`** - follow instructions to install the latest version of Python for your platform in the [Python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+1. **`Python 3.11+`** and **`PIP`** - follow instructions to install the latest version of Python for your platform in this [Python DOCS](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
 
-2. **Working In a Virtual Environment** - It's recommended to leverage a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virual environment for your platform can be found in the [Python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+2. **Working In a Virtual Environment** - It's recommended to leverage a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virtual environment for your platform can be found in the [Python DOCS](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
 
-`NOTE`: You can create the virtual environment via [`make`](https://www.gnu.org/software/make/), a GNU CLI utility/language.  
+`NOTE`: You can create the virtual environment via [`make`](https://www.gnu.org/software/make/), a GNU __CLI__ language.  
 Create a siloed **Python** environment, and activate it - with a directive in [Makefile](./Makefile). This will use your `pip virtualenv` or `pip venv` depending on which one is installed on your local machine.
 ```bash
 # DO in a terminal/shell;
@@ -26,6 +26,7 @@ source splog/Scripts/activate - GitBash Windows
 3. **Install `PIP` Dependencies** - once your virtual environment is setup/activated and running, install the required dependencies in `/backend` directory. This will use the dependencies listed out in the [`requirements.tx`](./requirements.txt) file:
 
 ```bash
+# expands to 'pip install -r requirements.txt'
 make install
 ```
 
@@ -35,7 +36,7 @@ make install
 
 - [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use to handle the lightweight `PostgreSQL` database. The API is in [`flaskr/__init__.py`](./flaskr/__init__.py) and it  references [`models.py`](./models.py).
 
-- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross-origin requests from our frontend server, which will communicate with the backend via a proxy.
+- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross-origin requests from our frontend server, which will communicate with the backend via HTTP.
 
 
 ### PostgreSQL
@@ -52,7 +53,7 @@ $ createdb senpais_log;
 
 The analogous command for Windows environment:
 ```bash
-# gitbash/cmd login to postgres
+# system termianl; login to postgres
 $ psql -U <username>
 # PSQL shell;
 $ create database senpais_log;
@@ -62,7 +63,7 @@ $ create database senpais_log;
 > default `<username>` is `postgres`  
 > IF **Postgres** is not running, then start it;  
 ```bash
-# replace 'path/to/PostgreSQL/data'
+# replace 'path/to/PostgreSQL/data' with the actual path;
 $ pg_ctl -D 'C:/Program Files/PostgreSQL/16/data' start
 ```
 
@@ -70,7 +71,7 @@ $ pg_ctl -D 'C:/Program Files/PostgreSQL/16/data' start
 
 ### Run the Server
 
-From within the root backend directory and with activated virtual environment, execute:
+From within the root __backend__ directory and in an activated virtual environment, execute:
 
 ```bash
 # the --reload flag will detect file changes and restart the server automatically.
