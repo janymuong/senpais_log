@@ -65,6 +65,8 @@ $ curl -X POST http://127.0.0.1:5000/anime -H "Content-Type: application/json"
       "image_url":"https://example.com/image.jpg",
       "watched": true
   }'
+# API response data here
+$
 ```
 
 3. `POST` search for a resource; returns a `match` of the `search term` which is a substring in db data - ie a title record;
@@ -94,10 +96,13 @@ $ curl -X POST http://127.0.0.1:5000/anime/1 -H "Content-Type: application/json"
 -d '{
       "title":"Shingeki no Kyojin",
       "description":"In Paradis Island, the story goes humanity has to survive againsts...",
-      "genre":"Military, Shounen", "release_date":"2023-08-01",
+      "genre":"Military, Shounen",
+      "release_date":"2023-08-01",
       "image_url":"https://example.com/image.jpg",
       "watched": false
     }'
+# API response data here
+$
 ```
 
 5. `DELETE` a resource;
