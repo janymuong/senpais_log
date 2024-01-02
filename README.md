@@ -1,7 +1,7 @@
 # Senpai's LOG
 
 <p align="center">
-  <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="320" width="480" style="padding-right:100px;" />
+  <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="240" width="320" style="padding-right:100px;" />
   <blockquote><i>It’s for the weebs :)</i></blockquote>
 </p>
 
@@ -30,17 +30,17 @@ Our [back-end](./backend/README.md/#key-pip-dependencies) ninjas wield **Flask**
 ## API Reference:
 > **Note**  
 > In the Senpai's Log application, the web client communicates with the server through various API routes. These routes facilitate the interaction between the user interface and the backend functionality.
-Below are sample API endpoints that will serve out responses to HTTP API requests/calls. This is a __`CRUD`__ simulated behavior of the endpoints. However, there might be slight variations in the actual implementations.  
+Below are sample API endpoints that will serve out responses to HTTP requests/calls. This is a __`CRUD`__ simulated behavior of the endpoints. However, there might be slight variations in the actual implementations.  
 
-- Methods [GET, POST] `/api/anime`:
-    Retrieves a list of anime titles in the user in Senpai's Log db.
-    Adds a new anime title to the database and the user's watch-list.
-- Methods [GET, PATCH] `/api/anime/:id`:
-    Retrieves detailed information about a specific anime by its unique ID.
-    Updates the status of an anime (watched or not watched) and other fields if necessary based on the user's preference.
-- Methods [GET, POST] `/api/users`:
-    Retrieves the user's information.
-    Creates a new user account with provided details.
+- Methods [GET, POST] `/api/anime`:  
+    Retrieves a list of anime titles in Senpai's Log db.  
+    Adds a new anime title to the database and the user's watch-list.  
+- Methods [GET, PATCH] `/api/anime/:id`:  
+    Retrieves detailed information about a specific anime by its unique ID.  
+    Updates the status of an anime (watched or not watched) and other fields if necessary based on the user's preference.  
+- Methods [GET, POST] `/api/users`:  
+    Retrieves the user's information.  
+    Creates a new user account with provided details.  
 
 ### Resource Endpoints
 1. check `API` status;
