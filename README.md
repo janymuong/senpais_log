@@ -1,4 +1,4 @@
-# Senpai's Log
+# Senpai's LOG
 
 <p align="left">
   <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="200" width="320" style="padding-right:100px;" />
@@ -29,17 +29,17 @@ Our [back-end](./backend/README.md/#key-pip-dependencies) ninjas wield **Flask**
 ---
 ## API Reference:
 > **Note**  
-> In the Senpai's Log application, the web client communicates with the web server through various API routes. These routes facilitate the interaction between the user interface and the backend functionality.
-Below are sample API endpoints that will serve out responses to HTTP API requests/calls. This is a CRUD simulated behavior of the endpoints. However, there might be slight variations in the actual implementations.  
+> In the Senpai's Log application, the web client communicates with the server through various API routes. These routes facilitate the interaction between the user interface and the backend functionality.
+Below are sample API endpoints that will serve out responses to HTTP API requests/calls. This is a __`CRUD`__ simulated behavior of the endpoints. However, there might be slight variations in the actual implementations.  
 
 - Methods [GET, POST] `/api/anime`:
-    Retrieves a list of anime titles in the user's watch-logs.
-    Adds a new anime title to the user's watch-list.
-- Methods [GET, PUT] `/api/anime/:id`:
+    Retrieves a list of anime titles in the user in Senpai's Log db.
+    Adds a new anime title to the database and the user's watch-list.
+- Methods [GET, PATCH] `/api/anime/:id`:
     Retrieves detailed information about a specific anime by its unique ID.
-    Updates the status of an anime (watched or not watched) based on the user's preference.
-- Methods [GET, POST] `/api/user`:
-    Retrieves the user's information based on their session ID.
+    Updates the status of an anime (watched or not watched) and other fields if necessary based on the user's preference.
+- Methods [GET, POST] `/api/users`:
+    Retrieves the user's information.
     Creates a new user account with provided details.
 
 ### Resource Endpoints
@@ -56,17 +56,16 @@ $
 2. `POST` create a resource;
 
 ```bash
-$ curl -X POST http://127.0.0.1:5000/anime -H "Content-Type: application/json" -d '{"title":"Shingeki no Kyojin", "description":"Paradis Island, the story goes humanity has to survive againsts...", "genre":"Miliatry", "release_date":"2023-08-01", "image_url":"https://example.com/image.jpg", "watched": true}'
+$ curl -X POST http://127.0.0.1:5000/anime -H "Content-Type: application/json" -d '{"title":"Attack On Titan", "description":"In Paradis Island, the story goes humanity has to survive againsts...", "genre":"Military, Shounen", "release_date":"2023-08-01", "image_url":"https://example.com/image.jpg", "watched": true}'
 ```
 
-3. `POST` search for a resource; returns a match of the search term;
+3. `POST` search for a resource; returns a `match` of the `search term` which is a substring in db data - ie a title record;
 ```bash
-merou@HP MINGW64 ~
-$ curl -X POST http://127.0.0.1:5000/search -H "Content-Type: application/json" -d '{"search_in": "kyojin"}'
+$ curl -X POST http://127.0.0.1:5000/search -H "Content-Type: application/json" -d '{"search_in": "titan"}'
 {
   "anime_results": [
     {
-      "description": "Paradis Island, the story goes humanity has to survive againsts...",
+      "description": "In Paradis Island, the story goes humanity has to survive againsts...",
       "genre": "Miliatry",
       "id": 2,
       "image_url": "https://example.com/image.jpg",
@@ -77,19 +76,18 @@ $ curl -X POST http://127.0.0.1:5000/search -H "Content-Type: application/json" 
   "success": true
 }
 
-merou@HP MINGW64 ~
+$
 ```
 
 4. `DELETE` a resource;
 ```bash
-merou@HP MINGW64 ~
 $ curl -X DELETE http://127.0.0.1:5000/anime/3
 {
   "deleted_anime": 3,
   "success": true
 }
 
-merou@HP MINGW64 ~
+$
 ```
 
 5. `GET` retrieve (a) resource(s):
@@ -105,12 +103,6 @@ $ curl -X GET http://127.0.0.1:5000/users
       "username": "sp-log"
     },
     {
-      "email": "mu-o@gmail.com",
-      "id": 3,
-      "password": "passwotwe7",
-      "username": "SU"
-    },
-    {
       "email": "mu-0xkcd@gmail.com",
       "id": 1,
       "password": "f1help,stuff=null",
@@ -118,6 +110,8 @@ $ curl -X GET http://127.0.0.1:5000/users
     }
   ]
 }
+
+$
 ```
 
 <br/>
