@@ -56,7 +56,15 @@ $
 2. `POST` create a resource;
 
 ```bash
-$ curl -X POST http://127.0.0.1:5000/anime -H "Content-Type: application/json" -d '{"title":"Attack On Titan", "description":"In Paradis Island, the story goes humanity has to survive againsts...", "genre":"Military, Shounen", "release_date":"2023-08-01", "image_url":"https://example.com/image.jpg", "watched": true}'
+$ curl -X POST http://127.0.0.1:5000/anime -H "Content-Type: application/json"
+-d '{
+      "title":"Attack On Titan",
+      "description":"In Paradis Island, the story goes humanity has to survive againsts...",
+      "genre":"Military, Shounen",
+      "release_date":"2023-08-01",
+      "image_url":"https://example.com/image.jpg",
+      "watched": true
+  }'
 ```
 
 3. `POST` search for a resource; returns a `match` of the `search term` which is a substring in db data - ie a title record;
@@ -79,7 +87,20 @@ $ curl -X POST http://127.0.0.1:5000/search -H "Content-Type: application/json" 
 $
 ```
 
-4. `DELETE` a resource;
+4. `POST` update a resource;
+
+```bash
+$ curl -X POST http://127.0.0.1:5000/anime/1 -H "Content-Type: application/json" 
+-d '{
+      "title":"Shingeki no Kyojin",
+      "description":"In Paradis Island, the story goes humanity has to survive againsts...",
+      "genre":"Military, Shounen", "release_date":"2023-08-01",
+      "image_url":"https://example.com/image.jpg",
+      "watched": false
+    }'
+```
+
+5. `DELETE` a resource;
 ```bash
 $ curl -X DELETE http://127.0.0.1:5000/anime/3
 {
@@ -90,7 +111,7 @@ $ curl -X DELETE http://127.0.0.1:5000/anime/3
 $
 ```
 
-5. `GET` retrieve (a) resource(s):
+6. `GET` retrieve (a) resource(s):
 ```bash
 $ curl -X GET http://127.0.0.1:5000/users
 {
