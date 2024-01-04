@@ -12,7 +12,7 @@
 2. **Working In a Virtual Environment** - it is recommended to leverage a virtual environment whenever using __Python__ for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virtual environment for your platform can be found in this [Python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
 
-`NOTE`: You can create the virtual environment via __GNU__ [`make`](https://www.gnu.org/software/make/), a __commandline__ language. __GNU Make__ is a tool which controls the generation of executables and other non-source files of a program from the program's source files.  
+`NOTE`: You can create the virtual environment via __GNU__ [`make`](https://www.gnu.org/software/make/), a __commandline__ language. For context, __GNU Make__ is a tool which controls the generation of executables and other non-source files of a program from the program's source files - in this case, we use it to create a virtual environment.  
 Create a siloed **Python** environment, and activate it - using a a rule or directive in [Makefile](./Makefile). This will use your `pip virtualenv` or `pip venv` depending on which one is installed on your local machine.
 ```bash
 # DO in a terminal/shell;
