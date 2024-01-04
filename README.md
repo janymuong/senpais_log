@@ -147,5 +147,5 @@ $
 
 
 ---
-Developer: [`view-creator-FILE`](./AUTHORS)  
+Developer: [`view-authors-FILE`](./AUTHORS)  
 License: [MIT](./LICENSE)
