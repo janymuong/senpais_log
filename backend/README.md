@@ -15,7 +15,7 @@ git clone https://github.com/janymuong/senpais_log.git
 2. **Working In a Virtual Environment** - it is recommended to leverage a virtual environment whenever using __Python__ for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virtual environment for your platform can be found in this [Python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
 
-`NOTE`: You can create the virtual environment via __GNU__ [`make`](https://www.gnu.org/software/make/), a __commandline__ language. For context, __GNU Make__ is a tool which controls the generation of executables and other non-source files of a program from the program's source files - in this case, we use it to create a virtual environment.  
+`NOTE`: You can create the virtual environment via __GNU__ [`make`](https://www.gnu.org/software/make/), a __commandline__ language. For context, __GNU Make__ is a tool which controls the generation of executables and other non-source files of a program from the program's source files - in this case, we use it to specify commands to create a virtual environment.  
 Create a siloed **Python** environment, and activate it - using a a rule or directive in [Makefile](./Makefile). This will use your `pip virtualenv` or `pip venv` depending on which one is installed on your local machine.
 ```bash
 # DO in a terminal/shell;
@@ -35,9 +35,9 @@ make install
 
 #### Key **PIP** Dependencies
 
-- [Flask](http://flask.pocoo.org/) is a lightweight backend microservices framework. Flask is required to handle requests and responses.
+- [Flask](http://flask.pocoo.org/) is a lightweight backend microservices framework. Flask is required to handle requests and responses. The API is in [`flaskr/__init__.py`](./flaskr/__init__.py) and it  references [`models.py`](./models.py).
 
-- [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use to handle the lightweight `PostgreSQL` database. The API is in [`flaskr/__init__.py`](./flaskr/__init__.py) and it  references [`models.py`](./models.py).
+- [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use to handle the lightweight `PostgreSQL` database. 
 
 - [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross-origin requests from our frontend server, which will communicate with the backend via HTTP.
 
