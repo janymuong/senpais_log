@@ -94,6 +94,18 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 <br/>
 
 ---
-## `appendix` - API Documentation
+### `appendix a` - API Documentation
 
 > View the [`API DOCS`](../README.md#api-reference) in the root README.md for sample API endpoints behavior, including each URL, request parameters, and the response body.
+
+### `appendix b` - PostgreSQL dump
+
+> You can use the [dump](./splog-anime.sql) file in this directory if you want to assess how the app works with prepoluted data.
+
+```bash
+$
+git clone https://github.com/janymuong/senpais_log.git
+cd backend
+psql -U <username> -d senpais_log < splog-anime.sql
+$
+```
