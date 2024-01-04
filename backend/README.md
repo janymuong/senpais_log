@@ -103,7 +103,7 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 
 ### `appendix b` - PostgreSQL dump
 
-> You can use the [dump](./splog-anime.sql) file in this directory if you want to assess how the app works with prepoluted data.
+> You can use the [`dump file`](./splog-anime.sql) in this directory if you want to assess how the app works with prepoluted data.
 
 ```bash
 $
