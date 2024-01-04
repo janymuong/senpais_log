@@ -4,6 +4,9 @@
 > Read through this documentation to install dependencies.
 
 ## Set-Up:
+```bash
+git clone https://github.com/janymuong/senpais_log.git
+```
 
 ### Install Dependencies
 
@@ -104,8 +107,7 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 
 ```bash
 $
-git clone https://github.com/janymuong/senpais_log.git
-cd backend
+# cd backend
 psql -U <username> -d senpais_log < splog-anime.sql
 $
 ```
