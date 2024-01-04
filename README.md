@@ -83,7 +83,8 @@ $ curl -X POST http://127.0.0.1:5000/search -H "Content-Type: application/json" 
       "release_date": "Tue, 01 Aug 2023 00:00:00 GMT",
       "title": "Attack On Titan",
       "watched": true
-    },
+    }
+  ],
   "success": true
 }
 
@@ -124,7 +125,7 @@ $ curl -X GET http://127.0.0.1:5000/users
   "success": true,
   "users": [
     {
-      "email": "xkcd@gmail.com",
+      "email": "splog@gmail.com",
       "id": 2,
       "password": "passwotwey",
       "username": "sp-log"
@@ -133,7 +134,7 @@ $ curl -X GET http://127.0.0.1:5000/users
       "email": "mu-0xkcd@gmail.com",
       "id": 1,
       "password": "f1help,stuff=null",
-      "username": "World Wide Weeb"
+      "username": "weeb"
     }
   ]
 }
@@ -146,5 +147,5 @@ $
 
 
 ---
-Developer: [[view-FILE]](./AUTHORS)  
-License: [MIT License](./LICENSE)
+Developer: [`view-FILE`](./AUTHORS)  
+License: [MIT](./LICENSE)
