@@ -1,5 +1,5 @@
 --
--- PostgreSQL database dump 
+-- PostgreSQL database dump
 --
 
 -- Dumped from database version 16.1
@@ -176,6 +176,8 @@ COPY public.anime (id, title, description, genre, release_date, image_url, watch
 COPY public.anime_logs (id, user_id, anime_id, watched) FROM stdin;
 1	1	1	t
 2	1	2	t
+3	1	3	t
+4	1	5	t
 \.
 
 
@@ -199,7 +201,7 @@ SELECT pg_catalog.setval('public.anime_id_seq', 14, true);
 -- Name: anime_logs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.anime_logs_id_seq', 2, true);
+SELECT pg_catalog.setval('public.anime_logs_id_seq', 4, true);
 
 
 --
