@@ -15,11 +15,10 @@ git clone https://github.com/janymuong/senpais_log.git
 2. **Working In a Virtual Environment** - it is recommended to leverage a virtual environment whenever using __Python__ for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virtual environment for your platform can be found in this [Python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
 
-`NOTE`: You can create the virtual environment via __GNU__ [`make`](https://www.gnu.org/software/make/), a __commandline__ language. For context, __GNU Make__ is a tool which controls the generation of executables and other non-source files of a program from the program's source files - in this case, we use it to specify commands to create a virtual environment.  
-Create a siloed **Python** environment, and activate it - using a a rule or directive in [Makefile](./Makefile). This will use your `pip virtualenv` or `pip venv` depending on which one is installed on your local machine.
+`NOTE`: You can create the virtual environment via __GNU__ [`make`](https://www.gnu.org/software/make/), a __commandline__ language. For context, __GNU Make__ is (typically) a tool which controls the generation of executables and other non-source files of a program from the program's source files. In this case, we use it to specify commands to create a virtual environment.  
+Create a siloed **Python** environment, and activate it - using a *rule* or *directive* in [Makefile](./Makefile). This will use your `pip virtualenv` or `pip venv` depending on which one is installed on your local machine.
 ```bash
-# DO in a terminal/shell;
-cd backend
+# cd backend; DO in a terminal/shell;
 make setup
 # activate virtual environment;
 source splog/bin/activate # GNU/Linux Bash
@@ -47,7 +46,7 @@ make install
 With `Postgres` running, create a `senpais_log` database:
 
 ```bash
-# system termianl;
+# system terminal;
 $ pg_isready 
 $ sudo -u <username> -i
 # PSQL shell;
@@ -56,7 +55,7 @@ $ createdb senpais_log;
 
 The analogous command for Windows environment:
 ```bash
-# system termianl; login to postgres
+# system terminal; login to postgres
 $ psql -U <username>
 # PSQL shell;
 $ create database senpais_log;
@@ -100,7 +99,7 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 ## Appendix
 ### `appendix a` - API Documentation
 
-> View the [`API DOCS`](../README.md#api-reference) in the root README.md for sample API endpoints behavior, including each URL, request parameters, and the response body.
+> View the [`API DOCS`](../README.md#api-reference) for sample API endpoints behavior, including each URL, request parameters, and the response body.
 
 
 ### `appendix b` - PostgreSQL dump
