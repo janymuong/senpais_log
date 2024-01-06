@@ -5,10 +5,11 @@
 </p>
 
 <div align="center">
-&ensp;[<kbd> <br> `API` <br> </kbd>](./backend/flaskr/__init__.py)&ensp;
-&ensp;[<kbd> <br> Backend <br> </kbd>](./backend/)&ensp;
-&ensp;[<kbd> <br> Frontend <br> </kbd>](./senpais-log-frontend/)&ensp;
+  [<kbd> <br> API <br> </kbd>](./backend/flaskr/__init__.py)
+  [<kbd> <br> Backend <br> </kbd>](./backend/)
+  [<kbd> <br> Frontend <br> </kbd>](./senpais-log-frontend/)
 </div>
+
 
 ## Premise
 
