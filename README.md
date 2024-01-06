@@ -4,10 +4,6 @@
   <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="200" width="320" style="padding-right:100px;" />
 </p>
 
-&ensp;[<kbd> <br> `API` <br> </kbd>](./backend/flaskr/__init__.py)&ensp;
-&ensp;[<kbd> <br> Backend <br> </kbd>](./backend/)&ensp;
-&ensp;[<kbd> <br> Frontend <br> </kbd>](./senpais-log-frontend/)&ensp;
-
 ## Premise
 
 > It’s for the weebs :)  
@@ -29,8 +25,14 @@ and integrate systems more effectively.
 - Database: [PostgreSQL](https://www.postgresql.org/)
 - Deployment: possibly [Amazon Web Services - AWS](https://aws.amazon.com/what-is-cloud-computing/)
 
-Our [back-end](./backend/README.md/#key-pip-dependencies) ninjas wield **Flask** and **SQLAlchemy**. We will leverage the Flask framework, a simple wrapper around Werkzeug, which offers suggestions, but doesn't enforce any dependencies or project layout. Also, a `Flask-SQLAlchemy` setup is a good combination for defining routes for our API endpoints and extending functionality effortlessly. And we could potentially deploy our app to Amazon Web Services which offers a relatively straightforward and seamless CI/CD pipeline via AWS-CLI, Elastic Container Registry, AWS CodeBuild, CodePipeline etc.
+Our [back-end](./backend/README.md/#key-pip-dependencies) ninjas wield **Flask** and **SQLAlchemy**. We will leverage the Flask framework, a simple wrapper around Werkzeug, which offers suggestions, but doesn't enforce any dependencies or project layout. Also, a `Flask-SQLAlchemy` setup is a good combination for defining routes for our API endpoints and extending functionality effortlessly. And we could potentially deploy our app to Amazon Web Services which offers a relatively straightforward and seamless CI/CD pipeline via AWS-CLI, Elastic Container Registry, AWS CodeBuild, CodePipeline etc.  
+
+&ensp;[<kbd> <br> `API` <br> </kbd>](./backend/flaskr/__init__.py)&ensp;
+&ensp;[<kbd> <br> Backend <br> </kbd>](./backend/)&ensp;
+&ensp;[<kbd> <br> Frontend <br> </kbd>](./senpais-log-frontend/)&ensp;
+
 <br><br>
+
 
 ---
 ## API Reference:
