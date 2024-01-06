@@ -1,5 +1,4 @@
 import os
-import sys
 from sqlalchemy import (
     Column,
     String,
@@ -10,7 +9,6 @@ from sqlalchemy import (
     create_engine
 )
 from flask_sqlalchemy import SQLAlchemy
-import json
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -20,7 +18,7 @@ path = os.path.dirname(os.path.dirname(__file__))
 env_file = os.path.join(path, '.env')
 load_dotenv(env_file)
 
-# read variables from .env file with os.getenv()
+# read variables from .env file
 db_name = os.getenv('DB_NAME')
 db_host = os.getenv('DB_HOST')
 db_user = os.getenv('DB_USER')
