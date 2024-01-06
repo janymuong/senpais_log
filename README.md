@@ -4,9 +4,10 @@
   <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="200" width="320" style="padding-right:100px;" />
 </p>
 
-> It’s for the weebs :)  
 
 ## Premise
+
+> It’s for the weebs :)  
 
 Everyone Knows Binge-watching Anime is Amazing, Ey?  
 And `YOU` know the trouble of juggling multiple anime shows on your watch-list, never-ending recommendations from your otaku buddies, and the persistent feeling of missing out on genuinely epic anime. The Senpai's Log project aims to solve the problem of anime fans, and weebs struggling to manage their anime watch-lists or ToDos effectively. With an ever-expanding universe of anime series and countless recommendations, anime nerds often find it difficult to keep track of what they've watched and what they plan to watch next.  
