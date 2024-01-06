@@ -1,10 +1,10 @@
 # Senpai's Log - Frontend
-> **Note**  
+> [!Note]  
 > This directory features the frontend of the Senpai's LOG application - the public facing part of the **full-stack** web app, which is a REACT - **Single Page Application**. Read through its documentation to install dependencies.  
 
 
 ## Set-Up
-> _Tip_: The frontend is designed to work with a [Flask-based Backend](../backend/flaskr/__init__.py). It does not load successfully if the backend is not working or not connected. You can **stand up the backend first**, and you can test it with [```curl```](https://curl.se/) to ascertain the `API` is  working correctly.
+> [!Tip]: The frontend is designed to work with a [Flask-based Backend](../backend/flaskr/__init__.py). It does not load successfully if the backend is not working or not connected. You can **stand up the backend first**, and you can test it with [```curl```](https://curl.se/) to ascertain the `API` is  working correctly.
 
 ### **`Node` and `NPM`**:  
 This project depends on **Nodejs** and **Node Package Manager (NPM)** [`https://nodejs.com/en/download`](https://nodejs.org/en/download/) to manage [React](https://react.dev/) and related dependencies.
