@@ -143,12 +143,14 @@ $ curl -X GET http://127.0.0.1:5000/users
 $
 ```
 
+
+<div align = right> <br><br>
+[<kbd> <br> 🔝 <br> </kbd>](#senpais-log)
+</div>
+
 <br/>
 <!-- <br/> -->
 
-<div align = right> <br><br>
-&ensp;[<kbd> <br> 🔝 <br> </kbd>](#senpais-log)&ensp;
-</div>
 
 ---
 Developer: [`view-authors-FILE`](./AUTHORS)  
