@@ -5,7 +5,7 @@
 </p>
 
 &ensp;[<kbd> <br> `API` <br> </kbd>](./backend/flaskr/__init__.py)&ensp;
-&ensp;[<kbd> <br> Themes <br> </kbd>](./backend/)&ensp;
+&ensp;[<kbd> <br> Backend <br> </kbd>](./backend/)&ensp;
 &ensp;[<kbd> <br> Frontend <br> </kbd>](./senpais-log-frontend/)&ensp;
 
 ## Premise
@@ -144,10 +144,10 @@ $
 <br/>
 <!-- <br/> -->
 
----
-Developer: [`view-authors-FILE`](./AUTHORS)  
-License: [MIT](./LICENSE)
-
 <div align = right> <br><br>
 [<kbd> <br> 🔝 <br> </kbd>](#senpais-log)
 </div>
+
+---
+Developer: [`view-authors-FILE`](./AUTHORS)  
+License: [MIT](./LICENSE)
