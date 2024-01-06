@@ -20,9 +20,9 @@ def paginate_anime(request, selection):
     end = start + ANIME_PER_PAGE
 
     anime = [anime_title.format() for anime_title in selection]
-    current_title = anime[start:end]
+    page_titles = anime[start:end]
 
-    return current_title
+    return page_titles
 
 
 def create_app(test_config=None):
