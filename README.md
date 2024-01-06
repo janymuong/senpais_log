@@ -144,9 +144,7 @@ $
 ```
 
 
-<div align = right> <br><br>
 [<kbd> <br> 🔝 <br> </kbd>](#senpais-log)
-</div>
 
 <br/>
 <!-- <br/> -->
