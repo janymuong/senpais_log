@@ -1,6 +1,4 @@
-import os
-from flask import Flask, request, abort, jsonify, json
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, request, abort, jsonify
 from flask_cors import CORS
 import random
 
@@ -12,7 +10,7 @@ ANIME_PER_PAGE = 5
 
 
 def paginate_anime(request, selection):
-    '''pagination function for 10 ANIME a page,
+    '''pagination function for 5 ANIME a page,
     and will be called on relevant endpoints:
     '''
     page = request.args.get('page', 1, type=int)
