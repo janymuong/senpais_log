@@ -158,7 +158,8 @@ def create_app(test_config=None):
         anime_titles = paginate_anime(request, selection)
         return jsonify({
             'success': True,
-            'anime': anime_titles
+            'anime': anime_titles,
+            'total_anime': len(selection)
         })
 
     @app.route('/anime/<int:anime_id>', methods=['GET'])
