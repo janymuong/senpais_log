@@ -1,5 +1,5 @@
 # Senpai's Log - Frontend
-> [!Note:]  
+> [!Note]:  
 > This directory features the frontend of the Senpai's LOG application - the public facing part of the **full-stack** web app, which is a REACT - **Single Page Application**. Read through its documentation to install dependencies.  
 
 
