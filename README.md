@@ -4,14 +4,15 @@
   <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="200" width="320" style="padding-right:100px;" />
 </p>
 
+
+## Premise
+
+
 <div align="center">
   <kbd>[API](./backend/flaskr/__init__.py)</kbd>
   <kbd>[Backend](./backend/)</kbd>
   <kbd>[Frontend](./senpais-log-frontend/)</kbd>
 </div>
-
-
-## Premise
 
 > It’s for the weebs :)  
 
@@ -146,6 +147,11 @@ $
 
 <br/>
 <!-- <br/> -->
+
+<div align = right> <br><br>
+
+[<kbd> <br> 🔝 <br> </kbd>](#-design-by-t2)
+</div>
 
 
 ---
