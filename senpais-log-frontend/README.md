@@ -1,5 +1,5 @@
 # Senpai's Log - Frontend
-> [!Note]:  
+> [!Note]  
 > This directory features the frontend of the Senpai's LOG application - the public facing part of the **full-stack** web app, which is a REACT - **Single Page Application**. Read through its documentation to install dependencies.  
 
 
@@ -14,8 +14,7 @@ This project depends on **Nodejs** and **Node Package Manager (NPM)** [`https://
 NPM relies on the `package.json` file located in the senpais-log-frontend directory, which lists out dependencies.
 
 #### **React-Toastify**
-> LIB INFO:  
-> This is a [library](https://fkhadra.github.io/react-toastify/introduction) for sending interactive notifications for CRUD based functionality e.g. sending a msessage to notify on deletion/update etc. 
+> __LIB INFO__: this is a [library](https://fkhadra.github.io/react-toastify/introduction) for sending interactive notifications for CRUD based functionality e.g. sending a msessage to notify on deletion/update etc. 
 
 ```bash
 # DO in a terminal/shell;
