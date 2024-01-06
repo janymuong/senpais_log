@@ -1,11 +1,8 @@
 from flask import Flask, request, abort, jsonify
 from flask_cors import CORS
 import random
-
 from models import setup_db, User, Anime, AnimeLog
 
-
-# setup stuff if needed here eg pagination etc
 ANIME_PER_PAGE = 5
 
 
