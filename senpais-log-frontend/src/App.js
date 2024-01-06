@@ -18,6 +18,7 @@ function App() {
     window.location.reload();
   };
 
+  const [totalAnime, setTotalAnime] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [animePerPage] = useState(5);
 
@@ -56,7 +57,10 @@ function App() {
   const fetchAnimeTitles = useCallback(() => {
     fetch(`http://localhost:5000/anime?page=${currentPage}&per_page=${animePerPage}`)
       .then(response => response.json())
-      .then(data => setAnimeTitles(data.anime))
+      .then(data => {
+        setAnimeTitles(data.anime);
+        setTotalAnime(data.total_anime);
+      })
       .catch(error => console.error('Error fetching anime titles:', error));
   }, [currentPage, animePerPage]);
 
@@ -235,8 +239,8 @@ function App() {
         <button onClick={handlePrevPage} disabled={currentPage === 1}>
           <span role="img" aria-label="back btn">🔙page</span>
         </button>
-        <span>{currentPage}</span>
-        <button onClick={handleNextPage}>
+        <span>{currentPage} / {Math.ceil(totalAnime / animePerPage)}</span>
+        <button onClick={handleNextPage} disabled={currentPage * animePerPage >= totalAnime}>
           next
         </button>
       </div>
