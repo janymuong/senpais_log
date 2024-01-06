@@ -3,13 +3,11 @@
 <p align="center">
   <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="200" width="320" style="padding-right:100px;" />
 </p>
-<div>
+
 &ensp;[<kbd> <br> Backend <br> </kbd>](./backend/)&ensp;
 &ensp;[<kbd> <br> Frontend <br> </kbd>](./senpais-log-frontend/)&ensp;
 &ensp;[<kbd> <br> `API` <br> </kbd>](./backend/flaskr/__init__.py)&ensp;
 
-<br><br><br><br>
-</div>
 
 
 ## Premise
