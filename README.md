@@ -4,15 +4,11 @@
   <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="200" width="320" style="padding-right:100px;" />
 </p>
 
+&ensp;[<kbd> <br> `API` <br> </kbd>](./backend/flaskr/__init__.py)&ensp;
+&ensp;[<kbd> <br> Themes <br> </kbd>](./backend/)&ensp;
+&ensp;[<kbd> <br> Frontend <br> </kbd>](./senpais-log-frontend/)&ensp;
 
 ## Premise
-
-
-<div align="center">
-  <kbd>[API](./backend/flaskr/__init__.py)</kbd>
-  <kbd>[Backend](./backend/)</kbd>
-  <kbd>[Frontend](./senpais-log-frontend/)</kbd>
-</div>
 
 > It’s for the weebs :)  
 
@@ -148,12 +144,10 @@ $
 <br/>
 <!-- <br/> -->
 
-<div align = right> <br><br>
-
-[<kbd> <br> 🔝 <br> </kbd>](#-design-by-t2)
-</div>
-
-
 ---
 Developer: [`view-authors-FILE`](./AUTHORS)  
 License: [MIT](./LICENSE)
+
+<div align = right> <br><br>
+[<kbd> <br> 🔝 <br> </kbd>](#senpais-log)
+</div>
