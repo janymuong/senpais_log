@@ -22,10 +22,8 @@ $ npm install
 ```
 
 ## Run:
-> IN `development mode`  
-
 ```bash
-# terminal/shell;
+# terminal/shell; runs server in development mode
 $ npm start
 ```
 
