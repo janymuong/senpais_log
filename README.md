@@ -147,7 +147,7 @@ $
 <!-- <br/> -->
 
 <div align = right> <br><br>
-[<kbd> <br> 🔝 <br> </kbd>](#senpais-log)
+&ensp;[<kbd> <br> 🔝 <br> </kbd>](#senpais-log)&ensp;
 </div>
 
 ---
