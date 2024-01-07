@@ -16,6 +16,9 @@ install:
 	# pip install --upgrade pip &&\
 	pip install -r requirements.txt
 
+# run:
+# export FLASK_APP=flaskr && export FLASK_DBUG=True && flask run --reload
+
 test:
 	# tests go here
 
