@@ -24,4 +24,4 @@ lint:
 	# this should be run from inside a virtualenv
 	pylint --disable=R,C,W1203,W1202 flaskr/__init__.py
 
-all: install lint test
+all: setup install
