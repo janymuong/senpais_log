@@ -7,6 +7,10 @@ setup:
 	# source splog/bin/activate ---GNU/Linux
 	python -m virtualenv splog
 
+db:
+	pg_ctl -D 'C:/Program Files/PostgreSQL/16/data' start\
+		|| pg_ctl -D 'C:/Program Files/PostgreSQL/16/data' restart
+
 install:
 	# this should be run from inside a virtualenv
 	# pip install --upgrade pip &&\
