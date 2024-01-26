@@ -4,6 +4,7 @@
   <img align="center" src="./senpais-log-frontend/public/anime-emot.svg" title="Senpai's LOG" height="200" width="320" style="padding-right:100px;" />
 </p>
 
+
 ## Premise
 
 > It’s for the weebs :)  
@@ -15,6 +16,7 @@ Basically, this app will help anime enthusiasts, from casual fans to hardcore we
 
 
 ### Built With:  
+
 This is the tech stack used for the project development.
 - Front-end: [React.js](https://react.dev/)
 - Back-end: [Python](https://www.python.org/) with Flask, and SQLAlchemy
@@ -26,6 +28,15 @@ and integrate systems more effectively.
 - Deployment: possibly [Amazon Web Services - AWS](https://aws.amazon.com/what-is-cloud-computing/)
 
 Our [back-end](./backend/README.md/#key-pip-dependencies) ninjas wield **Flask** and **SQLAlchemy**. We will leverage the Flask framework, a simple wrapper around Werkzeug, which offers suggestions, but doesn't enforce any dependencies or project layout. Also, a `Flask-SQLAlchemy` setup is a good combination for defining routes for our API endpoints and extending functionality effortlessly. And we could potentially deploy our app to Amazon Web Services which offers a relatively straightforward and seamless CI/CD pipeline via AWS-CLI, Elastic Container Registry, AWS CodeBuild, CodePipeline etc.  
+
+
+### Set-Up:
+
+> #### File Info
+> The **backend** directory contains the requisite Flask and SQLAlchemy server. Have a peep at the backend for the setup.  
+> The **frontend** directory contains a complete React frontend to consume the data from the Flask server.  
+
+You can use the buttons below to navigate to the directory/file you want to view and/or to look at how to setup the project locally.
 
 &ensp;[<kbd> <br> `API` <br> </kbd>](./backend/flaskr/__init__.py)&ensp;
 &ensp;[<kbd> <br> Backend <br> </kbd>](./backend/)&ensp;
