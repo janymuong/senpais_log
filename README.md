@@ -43,8 +43,8 @@ git clone https://github.com/janymuong/senpais_log.git
 You can use the buttons below to navigate to the directory/file you want to view and/or to look at how to setup the project locally.
 
 &ensp;[<kbd> <br> `API` <br> </kbd>](./backend/flaskr/__init__.py)&ensp;
-&ensp;[<kbd> <br> Backend Set-up <br> </kbd>](./backend/)&ensp;
-&ensp;[<kbd> <br> Frontend Set-up <br> </kbd>](./senpais-log-frontend/)&ensp;
+&ensp;[<kbd> <br> Backend Set-up <br> </kbd>](./backend/README.md#set-up)&ensp;
+&ensp;[<kbd> <br> Frontend Set-up <br> </kbd>](./senpais-log-frontend/README.md#set-up)&ensp;
 
 <br><br>
 
