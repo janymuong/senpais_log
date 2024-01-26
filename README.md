@@ -32,6 +32,10 @@ Our [back-end](./backend/README.md/#key-pip-dependencies) ninjas wield **Flask**
 
 ### Set-Up:
 
+```bash
+git clone https://github.com/janymuong/senpais_log.git
+```
+
 > #### File Info
 > The **backend** directory contains the requisite Flask and SQLAlchemy server. Have a peep at the backend for the setup.  
 > The **frontend** directory contains a complete React frontend to consume the data from the Flask server.  

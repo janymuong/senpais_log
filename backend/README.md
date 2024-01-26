@@ -4,9 +4,6 @@
 > Read through this documentation to install dependencies.
 
 ## Set-Up:
-```bash
-git clone https://github.com/janymuong/senpais_log.git
-```
 
 ### Install Dependencies
 
@@ -71,7 +68,7 @@ $ pg_ctl -D 'C:/Program Files/PostgreSQL/16/data' start
 
 
 
-### Run the Server
+## Run the Server
 
 From within the root __backend__ directory and in an activated virtual environment, execute:
 
