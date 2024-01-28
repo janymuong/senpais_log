@@ -42,7 +42,7 @@ function Footer() {
         </code>
       </p>
       <div className="copyright">
-        &copy; {new Date().getFullYear()} World Wide 'WEEB' :). Unlicense. All rights reserved.
+        &copy; {new Date().getFullYear()} World Wide 'WEEB' ウィアブー. Unlicense. All rights reserved.
       </div>
     </footer>
   );
