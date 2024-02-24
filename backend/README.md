@@ -78,11 +78,12 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 ```
 
 ## Sample Implementations
+
 > **Note**  
 > For each `API` endpoint, response data is expected from it, and to be returned in `JSON`. This data is consumed by the REACT frontend via `CORS` based proxy.
 
 1. Use Flask-CORS to enable cross-domain requests and set response headers.
-2. Create an endpoint to handle `GET` requests for anime titles, including pagination (every 10 titles). This endpoint should return a list of titles, number of total titles.
+2. Create an endpoint to handle `GET` requests for anime titles, including pagination (every 5 titles). This endpoint should return a list of titles, number of total titles.
 3. Create an endpoint to handle `GET` requests for all available titles, anime, users.
 4. Create an endpoint to `DELETE` a anime using a anime `ID`.
 5. Create an endpoint to `POST` a new anime, titles etc which will require the descriptions and other attributes etc.
@@ -92,16 +93,18 @@ export FLASK_APP=flaskr && export FLASK_DEBUG=true && flask run --reload
 
 <br/>
 
+
 ---
 ## Appendix
+
 ### `appendix a` - API Documentation
 
-> View the [`API DOCS`](../README.md#api-reference) for sample API endpoints behavior, including each URL, request parameters, and the response body.
+View the [`API DOCS`](../README.md#api-reference) for sample API endpoints behavior, including each URL, request parameters, and the response body.
 
 
 ### `appendix b` - PostgreSQL dump
 
-> You can use the [`dump file`](./splog-anime.sql) in this directory if you want to assess how the app works with prepoluted data.
+You can use the [`dump file`](./splog-anime.sql) in this directory if you want to assess how the app works with prepoluted data.
 
 ```bash
 $
